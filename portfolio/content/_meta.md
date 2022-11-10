@@ -1,8 +1,8 @@
 ---
-Logo: image/leaf_256x256.png
-Tagline: My portfolio.
+Logo: image/Linux_beard.jpg
+Tagline: Min portfolio.
 Social:
-    - title: Link till sidans github repo.
-      url: https://github.com/dbwebb-se/design-v3
+    - title: Länk till mitt github repo för kursen.
+      url: https://github.com/DMoest/design_v3
       icon: github
 ---
