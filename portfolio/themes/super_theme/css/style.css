@@ -1,0 +1,6 @@
+/* --- CSS MODULE IMPORTS --- */
+@import './../../shared/css/variables.css';
+@import './../../shared/css/font-awsome.min.css';
+@import './base.css';
+@import './buttons.css';
+@import './content.css';

@@ -1,0 +1,10 @@
+.logo_img {
+    width: 10rem;
+    height: 10rem;
+    display: inline-block;
+    border-radius: 1000rem;
+}
+
+img {
+    max-width: 100%;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv" class="no-js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+
+    {% if meta.description %}
+        <meta name="description" content="{{ meta.description|striptags }}">
+    {% endif %}
+    {% if meta.robots %}
+        <meta name="robots" content="{{ meta.robots }}">
+    {% endif %}
+    {% if current_page %}
+        <link rel="canonical" href="{{ current_page.url }}">
+    {% endif %}
+
+    {# Normalize CSS #}
+    <link rel="stylesheet" href="{{ theme_url }}/../shared/css/normalize.css" type="text/css">
+
+    {# Font Awesome #}
+    <link rel="stylesheet" href="{{ theme_url }}/../shared/css/font-awesome.min.css" type="text/css">
+
+    {# Favicon #}
+    <link rel="icon" href="{{ theme_url }}/../shared/img/favicon.ico">
+
+    {# Mobile menu #}
+    <link rel="stylesheet" href="{{ theme_url }}/css/mobile-menu.css" type="text/css" />
+
+    {# CSS Styles #}
+    <link rel="stylesheet" href="{{ theme_url }}/css/style.css" type="text/css">
+</head>

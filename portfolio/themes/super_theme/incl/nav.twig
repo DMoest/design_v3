@@ -1,18 +1,21 @@
-<div class="header" role="banner">
-    <div class="site-header">
+<div class="header flex_row" role="banner">
+    <div class="site-header std_padding_sides">
         {% if pages["_meta"].meta.logo %}
-        <div class="logo">
-            <a href="{{ base_url }}">
-                <img src="{{ base_url }}/{{ pages["_meta"].meta.logo|url }}" alt="" />
-            </a>
-        </div>
+            <div class="logo">
+                <a href="{{ base_url }}">
+                    <img class="logo_img" src="{{ base_url }}/{{ pages["_meta"].meta.logo|url }}"
+                    alt="" />
+                </a>
+            </div>
         {% endif %}
-        <div class="title" {{ pages["_meta"].meta.tagline ? ' class="tagline"' }}>
+
+        <div class="title div_inline" {{ pages["_meta"].meta.tagline ? ' class="tagline"' }}>
             <a href="{{ base_url }}">
                 <h1>{{ site_title }}</h1>
                 {{ pages["_meta"].meta.tagline|markdown }}
             </a>
         </div>
+
         <a class="nav-toggle" id="nav-toggle" title="Toggle Menu" role="button" aria-controls="nav" aria-expanded="false"
             tabindex="1">
             <i class="fa fa-bars" aria-hidden="true" id="toggler"></i>
