@@ -30,6 +30,8 @@ body {
 
 .header, .footer {
     flex: 0 0 auto;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
 }
 
 /* Header */
@@ -41,7 +43,7 @@ body {
 
 /* Title */
 
-.title, .logo {
+.title {
     padding: 3em 3em 3em 0;
 }
 
@@ -142,6 +144,18 @@ blockquote {
 }
 
 .std_padding_sides {
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.std_padding_right {
+    padding-right: 20%;
+}
+
+.std_padding_left {
+    padding-left: 20%;
+}
+
+.std_padding_bottom {
+    padding-bottom: 4rem;
 }

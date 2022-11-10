@@ -2,9 +2,21 @@
     width: 10rem;
     height: 10rem;
     display: inline-block;
-    border-radius: 1000rem;
+    border-radius: 100rem;
+}
+
+.logo_container {
+    display: inline-block;
+    width: 15rem;
+    height: 10rem;
+    padding: 2rem 2rem 2rem 0;
 }
 
 img {
     max-width: 100%;
+}
+
+.tagline_link {
+    text-decoration: none;
+    color: var(--color-text-inverted);
 }
