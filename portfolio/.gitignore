@@ -9,6 +9,7 @@ desktop.ini
 # Mac OS X
 .DS_Store
 ._*
+../.DS_Store
 
 # Composer
 /composer.phar
