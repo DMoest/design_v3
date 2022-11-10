@@ -112,16 +112,16 @@
         },
         {
             "name": "mos/cimage",
-            "version": "v0.8.1",
+            "version": "v0.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mosbth/cimage.git",
-                "reference": "024905676145ee8a000fb0b6735ce6f8ba98f427"
+                "reference": "80cd4e092f67480e66482d953eb3e2048ca7ed91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mosbth/cimage/zipball/024905676145ee8a000fb0b6735ce6f8ba98f427",
-                "reference": "024905676145ee8a000fb0b6735ce6f8ba98f427",
+                "url": "https://api.github.com/repos/mosbth/cimage/zipball/80cd4e092f67480e66482d953eb3e2048ca7ed91",
+                "reference": "80cd4e092f67480e66482d953eb3e2048ca7ed91",
                 "shasum": ""
             },
             "require": {
@@ -171,9 +171,9 @@
             "support": {
                 "docs": "http://dbwebb.se/opensource/cimage",
                 "issues": "https://github.com/mosbth/cimage/issues",
-                "source": "https://github.com/mosbth/cimage/tree/master"
+                "source": "https://github.com/mosbth/cimage/tree/v0.8.4"
             },
-            "time": "2020-06-08T10:38:44+00:00"
+            "time": "2022-05-30T13:32:20+00:00"
         },
         {
             "name": "picocms/pico",
@@ -211,8 +211,8 @@
             "autoload": {
                 "psr-0": {
                     "Pico": "lib/",
-                    "PicoPluginInterface": "lib/",
-                    "AbstractPicoPlugin": "lib/"
+                    "AbstractPicoPlugin": "lib/",
+                    "PicoPluginInterface": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -485,5 +485,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

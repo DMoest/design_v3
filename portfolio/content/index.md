@@ -6,10 +6,16 @@ Description: Det här är webbplatsens startsida.
 Hem
 ==========================
 
-Välkommen till min webbplats skapad för kursen design V3 vid Blekinge Tekniska Högskola 
-hösten/vintern 2022. Här är det tänkt att vi ska applicera style och lära oss förstå hur ett 
-arbete tillsammans med ett team kan se ut, teoretisk iaf. Genom våra studier skapar vi förståelse 
-hur de olika medlemarna i ett projekt använder språket för att kommunicerar sins emellan, 
-verktygen de kan använda och en förståelse för kunskaperna var och en av oss i teamet förlitar 
-sig på för att tillsammans nå i mål och leverera till kund.
-
+Välkommen till min webbplats skapad för kursen Design (V3) vid Blekinge Tekniska Högskola 
+hösten/vintern 2022. I den här kursen är det tänkt att vi ska lära oss förstå hur team 
+arbetar tillsammans, vad är de olika rollerna och hur kommunicerar dem sins emellan för att nå 
+resultat, teoretisk iaf. Tanken är att vi ska lära oss förstå hur våra arbetskamrater 
+kommunicerar, språket/lingot/termerna som används för att beskriva olika saker som behöver 
+levereras till kund. Med stort fokus på design aspekten eftersom det är något konkret och 
+verklighetsförankrat som en programmerare bygger efter en annan persons vision, designern. 
+Vems är visionen? Är det chefens? Är det kundens? Är det designerns? Det kreativa arbetet är 
+abstrakt och för att nå bästa möjliga resultat behöver vi förstå varandra oavsätt vem som kommer 
+med input, konstruktiv kritik eller mindre förslag av olika slag. Eftersom dem kanske inte kan mitt 
+programmerar-lingo är det därför viktigt att försöka lyssna och lära från deras språk/termer som 
+används för att beskriva arbetet. När allt kommer omkring så är det ändå kunden som har sista 
+ordet om något har nått en användbarhetsnivå som de är villiga att betala för.
