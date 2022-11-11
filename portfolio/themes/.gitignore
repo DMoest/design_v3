@@ -4,4 +4,6 @@
 # NPM
 build/
 node_modules/
+**/node_modules/
+themes/node_modules/
 package-lock.json
