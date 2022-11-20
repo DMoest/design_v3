@@ -1,0 +1,48 @@
+@import './variables';
+@import './functions';
+
+// Responsive font size
+@mixin font-size($level) {
+    font-size: map-get($font-size-large, $level);
+
+    @media only screen and (max-width: map-get($breakpoint, phone-only)) {
+        font-size: map-get($font-size-small, $level);
+    }
+    @media only screen and (min-width: map-get($breakpoint, tablet-portrait)) {
+        font-size: map-get($font-size-small, $level);
+    }
+    @media only screen and (min-width: map-get($breakpoint, tablet-landscape)) {
+        font-size: map-get($font-size-medium, $level);
+    }
+    @media only screen and (min-width: map-get($breakpoint, desktop)) {
+        font-size: map-get($font-size-medium, $level);
+    }
+    @media only screen and (min-width: map-get($breakpoint, desktop-big)) {
+        font-size: map-get($font-size-large, $level);
+    }
+}
+
+// Responsive Media Query
+@mixin for-size($size) {
+    @if $size == phone-only {
+        @media only screen and (max-width: map-get($breakpoint, phone-only)) {
+            @content;
+        }
+    } @else if $size == tablet-portrait {
+        @media only screen and (min-width: map-get($breakpoint, tablet-portrait)) {
+            @content;
+        }
+    } @else if $size == tablet-landscape {
+        @media only screen and (min-width: map-get($breakpoint, tablet-landscape)) {
+            @content;
+        }
+    } @else if $size == desktop {
+        @media only screen and (min-width: map-get($breakpoint, desktop)) {
+            @content;
+        }
+    } @else if $size == big-desktop {
+        @media only screen and (min-width: map-get($breakpoint, desktop-big)) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/functions';
+
+.header {
+    position: relative;
+    z-index: 1000;
+    top: 0;
+    display: flex;
+    align-content: stretch;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: divide(map-get($vertical-rhythm, small));
+    background-color: $color-primary-100;
+
+    //@include for-size(phone-only) {
+    //    padding: $pad-xs;
+    //}
+    //@include for-size(tablet-portrait) {
+    //    padding: $pad-s;
+    //}
+
+    .title_tagline {
+        margin: auto 0;
+
+        @include for-size(phone-only) {
+            flex-basis: 12rem;
+        }
+        @include for-size(tablet-portrait) {
+            flex-basis: fit-content;
+        }
+    }
+
+    .title {
+        flex-basis: fit-content;
+        margin: 0;
+        padding: divide(map-get($vertical-rhythm, small)) divide(map-get($vertical-rhythm, small)) map-get($vertical-rhythm, small) 0;
+
+        &__hairline {
+            font-width: 100;
+        }
+    }
+
+    //.tagline {}
+
+    .logo {
+        display: block;
+        overflow: hidden;
+        flex-basis: fit-content;
+        margin: auto 0;
+    }
+
+    .nav-toggle {
+        flex-basis: fit-content;
+
+        @include for-size(phone-only) {
+            > i {
+                font-size: 1.75rem;
+            }
+        }
+        @include for-size(tablet-portrait) {
+            > i {
+                font-size: 1.85rem;
+            }
+        }
+    }
+
+    .link {
+        width: 100%;
+        height: auto;
+    }
+
+    .img {
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+
+        margin: auto 0;
+        border-radius: 2500rem;
+    }
+}

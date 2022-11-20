@@ -1,0 +1,197 @@
+/* --- Sass Variables --- */
+
+// Line heights
+$line-height: (
+        small: 1.1,
+        medium: 1.25,
+        large: 1.33,
+        code: 1.4
+);
+
+/*
+ * Modular SMALL scale
+ * http://www.modularscale.com/?1.1&em&1.25&web&text
+*/
+$font-size-small: (
+        base: calc(12px + 0.35vw),
+        body: calc(12px + 1vw),
+        h1: 2.686rem,
+        h2: 2.148rem,
+        h3: 1.719rem,
+        h4: 1.375rem,
+        p: 1.1rem,
+        code: 0.75rem
+);
+
+/*
+ * Modular MEDIUM scale
+ * http://www.modularscale.com/?1.25&em&1.25&web&text
+*/
+$font-size-medium: (
+        base: calc(12px + 0.35vw),
+        body: calc(12px + 1vw),
+        h1: 3.052rem,
+        h2: 2.441rem,
+        h3: 1.953em,
+        h4: 1.563rem,
+        p: 1.25rem,
+        code: 1rem
+);
+
+/*
+ * Modular LARGE scale
+ * http://www.modularscale.com/?1.25&em&1.33&web&text
+*/
+$font-size-large: (
+        base: calc(12px + 0.35vw),
+        body: calc(12px + 1vw),
+        h1: 3.911rem,
+        h2: 2.941rem,
+        h3: 2.211rem,
+        h4: 1.663rem,
+        p: 1.25rem,
+        code: 1.25rem
+);
+
+//$font-size-base: calc(12px + 0.35vw); /* Responsive base font size */
+//$font-size-body: calc(12px + 1vw);
+//$font-size-h1: 1.912em;
+//$font-size-h2: 1.616em;
+//$font-size-h3: 1.471em;
+//$font-size-h4: 1.3em;
+//$font-size-h5: 1.243em;
+//$font-size-h6: 1.132em;
+//$font-size-p: 1rem;
+//$font-size-code: 0.85rem;
+
+// Font Weights
+$font-weight: (
+        light: 300,
+        regular: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
+        xbold: 800,
+        black: 900
+);
+
+// Vertical Rhythm
+$vertical-rhythm: (
+        small: map-get($line-height, small) * map-get($font-size-small, p),
+        medium: map-get($line-height, medium) * map-get($font-size-medium, p),
+        large: map-get($line-height, large) * map-get($font-size-large, p)
+);
+
+// Font Families
+$font-family: clarendon-urw, serif;
+$font-family-title: highgate, sans-serif;
+$font-family-subtitle: bungee, sans-serif;
+$font-family-p: clarendon-urw, serif;
+$font-family-code: source-code-pro, monospace;
+//$font-family-code: monospace;
+
+//highgate, sans-serif;
+//bungee, sans-serif;
+//clarendon-urw, serif;
+//source-code-pro, monospace;
+
+$border-radius: (
+        's': 0.15rem,
+        'm': 0.3rem,
+        'l': 0.5rem,
+);
+
+// Färgscheman
+$color-primary-100: #ffcf76;
+$color-primary-200: #ffc14e;
+$color-primary-300: #f2a922;
+$color-primary-400: #c78409;
+$color-primary-500: #9e6600;
+
+$color-secondary-100: #ffbd6b;
+$color-secondary-200: #ed9f3f;
+$color-secondary-300: #d98014;
+$color-secondary-400: #ae6306;
+$color-secondary-500: #874a00;
+
+$color-tertiary-100: #ff9d78;
+$color-tertiary-200: #e8754a;
+$color-tertiary-300: #d9501e;
+$color-tertiary-400: #ac390e;
+$color-tertiary-500: #852400;
+
+$color-quaternary-100: #ba5d3a;
+$color-quaternary-200: #983c1a;
+$color-quaternary-300: #732002;
+$color-quaternary-400: #4d1500;
+$color-quaternary-500: #290b00;
+
+$color-quinary-100: #667577;
+$color-quinary-200: #4b595c;
+$color-quinary-300: #323e40;
+$color-quinary-400: #192426;
+$color-quinary-500: #102225;
+
+// Textfärger
+$color-text-base: #fff;
+$color-text-muted: #c7d2fe;
+$color-text-inverted: #1a202c;
+$color-fill-base: #1a202c;
+$color-button-accent: #fff;
+$color-button-accent-hover: #fff;
+$color-button-muted: #fff;
+
+// Informativa svarsfärger
+$color-info: #4299e1;
+$color-success: #48bb78;
+$color-caution: #f6e05e;
+$color-warning: #f56565;
+$color-danger: #e53e3e;
+
+// Sociala Medie färger
+$color-bitbucket: #205081;
+$color-discord: #7289da;
+$color-facebook: #3b5998;
+$color-flickr: #ff0084;
+$color-github: #333;
+$color-gitlab: #fc6d26;
+$color-instagram: #e1306c;
+$color-linkedin: #0077b5;
+$color-pinterest: #bd081c;
+$color-reddit: #ff4500;
+$color-skype: #00aff0;
+$color-spotify: #1db954;
+$color-slack: #4a154b;
+$color-snapchat: #fffc00;
+$color-soundcloud: #f50;
+$color-stackoverflow: #f48024;
+$color-telegram: #08c;
+$color-twitch: #6441a5;
+$color-twitter: #1da1f2;
+$color-tumblr: #35465c;
+$color-vimeo: #1ab7ea;
+$color-whatsapp: #25d366;
+$color-yahoo: #400191;
+$color-youtube: #f00;
+
+// Responsive Breakpoints
+$breakpoint: (
+        phone-only: 667px,
+        tablet-portrait: 668px,
+        tablet-landscape: 926px,
+        desktop: 1200px,
+        desktop-big: 1800px
+);
+
+// Screens Sizes?
+//--------------
+// iPhone 6,7,8         width 375px, height 667px
+// iPhone 6,7,8 Plus    width 414px, height 736px
+// iPhone 12 max        width 428px, height 926px
+// iPhone eXpensive     width 375px, height 734px
+// Android              width 412px, height 684px
+
+// iPad                 width 768px, height 1024px
+
+// Desktop              width 1200px
+// Desktop-Big          width 1800px

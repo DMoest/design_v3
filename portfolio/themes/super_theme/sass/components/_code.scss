@@ -1,0 +1,32 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/functions';
+
+/* Code */
+code {
+    font-family: $font-family-code;
+    font-size: 0.85rem;
+    line-height: map-get($line-height, small);
+    margin: 0 0.1em;
+    padding: 0.1em 0.2em;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+    background: #f5f5f5;
+}
+
+pre {
+    padding: 0 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+    background: #f5f5f5;
+
+    code {
+        line-height: map-get($line-height, small);
+        display: block;
+        overflow-x: auto;
+        margin: 0;
+        padding: 1.1111em 0;
+        border: 0 none;
+        background: transparent;
+    }
+}

@@ -1,0 +1,67 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/functions';
+
+.main {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    background-color: $color-quinary-300;
+
+    @include for-size(phone-only) {
+        padding: map-get($vertical-rhythm, small);
+    }
+
+    @include for-size(tablet-portrait) {
+        padding: divide(map-get($vertical-rhythm, medium)) map-get($vertical-rhythm, medium);
+    }
+
+    @include for-size(tablet-landscape) {
+        padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium));
+    }
+
+    @include for-size(desktop) {
+        padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium), 4);
+    }
+
+    @include for-size(desktop-big) {
+        padding: map-get($vertical-rhythm, large) multiply(map-get($vertical-rhythm, large), 16);
+    }
+}
+
+.sidebar {
+    //    DO A SIDEBAR
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    border-radius: map-get($border-radius, small);
+    background-color: $color-quaternary-300;
+
+    &.left {
+        float: left;
+    }
+
+    &.right {
+        float: right;
+    }
+
+    &.flex-row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &.flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+//.container {
+//    display: block;
+//    box-sizing: border-box;
+//    width: 100%;
+//    height: auto;
+//}

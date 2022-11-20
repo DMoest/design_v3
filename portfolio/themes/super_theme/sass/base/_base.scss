@@ -1,0 +1,104 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/functions';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
+}
+
+ol,
+ul {
+    padding-left: 1.5em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+html,
+body {
+    z-index: 0;
+    height: 100%;
+}
+
+html {
+    overflow-x: hidden;
+    //padding-top: 10rem;
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Placement */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    &.row {
+        flex-direction: row;
+    }
+
+    &.column {
+        flex-direction: column;
+    }
+}
+
+// Base classes for margin/padding sizes
+$dimensions: ('m': 'margin', 'p': 'padding');
+$directions: (
+        't': 'top',
+        'b': 'bottom',
+        'l': 'left',
+        'r': 'right',
+        'y': '',
+        'x': '',
+);
+
+// Loop through dimensions and directions to create base classes for margins & paddings.
+// Kind of like TailwindCSS but with Sass.
+// 1. Iterate over dimensions
+@each $dim in $dimensions {
+    // 2. For EACH dimension iterate over directions
+    @each $dir in $directions {
+        // 3. For each direction and dimension create a class for each size
+        @for $i from 1 through 50 {
+            // Set size based on $i & $baseline to calculate rem values.
+            $size: $i * 1; //replace 1 with baseline here.
+
+            // Deal with y-axis values only
+            @if nth($dir, 1) == 'y' {
+                .#{nth($dim, 1)}#{nth($dir, 1)}-#{$size} {
+                    #{nth($dim, 2)}-top: #{$size}rem;
+                    #{nth($dim, 2)}-bottom: #{$size}rem;
+                }
+            }
+                // Deal with x-axis values only
+            @else if nth($dir, 1) == 'x' {
+                .#{nth($dim, 1)}#{nth($dir, 1)}-#{$size} {
+                    #{nth($dim, 2)}-left: #{$size}rem;
+                    #{nth($dim, 2)}-right: #{$size}rem;
+                }
+            }
+                // Deal with the other values
+            @else {
+                .#{nth($dim, 1)}#{nth($dir, 1)}-#{$size} {
+                    #{nth($dim, 2)}-#{nth($dir, 2)}: #{$size}rem;
+                }
+            }
+
+            //    Woalah! Är inte detta snyggt? (humoristiskt menat...)
+        }
+    }
+}

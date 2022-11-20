@@ -1,0 +1,83 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/functions';
+
+.slide {
+    overflow-y: hidden !important;
+    transition: height 0.5s ease-in !important;
+}
+
+.js {
+    .nav-toggle {
+        @include font-size(p);
+        display: inline-block;
+        float: right;
+        width: 2rem;
+        height: 2rem;
+        margin: 0.6667em 0;
+        cursor: pointer;
+        text-align: center;
+    }
+}
+
+.nav {
+    &-container {
+        @include for-size(phone-only) {
+            width: 5rem;
+            height: 5rem;
+        }
+        @include for-size(tablet-portrait) {
+            width: 7rem;
+            height: 7rem;
+        }
+
+        &-menu {
+            display: flex;
+            align-items: center;
+            flex-grow: 3;
+            flex-shrink: 3;
+            justify-content: flex-start;
+            padding: 1em 0;
+            list-style: none;
+
+            @include for-size(phone-only) {
+                position: fixed;
+                z-index: 500;
+                top: 0;
+                right: 0;
+                flex-flow: column wrap;
+                flex-basis: 100%;
+                width: 50%;
+                padding-top: 8rem;
+                opacity: 0.65;
+                border-radius: map-get($border-radius, small);
+                background-color: white;
+            }
+            @include for-size(tablet-portrait) {
+                flex-flow: row wrap;
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    &-toggle {
+        display: none;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    ul {
+        li {
+            padding: 0 1em;
+
+            a {
+                display: block;
+                padding: 0.5em 0;
+            }
+        }
+    }
+
+    a {
+        color: #333;
+    }
+}

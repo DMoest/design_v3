@@ -1,0 +1,17 @@
+@import 'utilities/variables';
+@import 'base/base';
+@import 'components/blockquote';
+@import 'components/code';
+@import 'utilities/functions';
+@import 'components/buttons';
+@import 'layout/forms';
+@import 'base/typography';
+@import 'components/navigation';
+@import 'layout/tables';
+@import 'layout/grids';
+@import 'components/content';
+@import 'layout/footer';
+@import 'layout/header';
+
+// Include the shared CSS
+@import './../../shared/css/font-awsome.min.css';
