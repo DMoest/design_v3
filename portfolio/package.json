@@ -6,16 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "stylelint \"**/*.scss\"",
-    "style": "sass kmom02/scss/style.scss kmom02/css/style.css --no-source-map",
-    "style-min": "sass kmom02/scss/style.scss kmom02/css/style.min.css --no-source-map --style compressed"
+    "style": "sass themes/super_theme/sass/style.scss themes/super_theme/css/style.css --no-source-map",
+    "style-min": "sass themes/super_theme/sass/style.scss themes/super_theme/css/style.min.css --no-source-map --style compressed",
+    "sass-watch": "sass themes/super_theme/sass/style.scss themes/super_theme/css/style.css --no-source-map --watch",
+    "sass-watch-min": "sass themes/super_theme/sass/style.scss themes/super_theme/css/style.min.css --no-source-map --style compressed --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "http-server": "^14.1.1",
     "normalize.css": "^8.0.1",
     "sass": "^1.56.1",
     "stylelint": "^14.14.1",
     "stylelint-config-sass-guidelines": "^9.0.1"
+  },
+  "dependencies": {
+    "stylelint-statement-max-nesting-depth": "^2.0.1"
   }
 }
