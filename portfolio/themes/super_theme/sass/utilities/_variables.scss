@@ -2,10 +2,10 @@
 
 // Line heights
 $line-height: (
-    small: 1.1,
-    medium: 1.25,
-    large: 1.33,
-    code: 1.4
+small: 1.1,
+medium: 1.25,
+large: 1.33,
+code: 1.4
 );
 
 /*
@@ -13,14 +13,14 @@ $line-height: (
  * http://www.modularscale.com/?1.1&em&1.25&web&text
 */
 $font-size-small: (
-    base: calc(12px + 0.35vw),
-    body: calc(12px + 1vw),
-    h1: 2.686rem,
-    h2: 2.148rem,
-    h3: 1.719rem,
-    h4: 1.375rem,
-    p: 1.1rem,
-    code: 0.75rem
+base: calc(12px + 0.35vw),
+body: calc(12px + 1vw),
+h1: 2.686rem,
+h2: 2.148rem,
+h3: 1.719rem,
+h4: 1.375rem,
+p: 1.1rem,
+code: 0.75rem
 );
 
 /*
@@ -28,14 +28,14 @@ $font-size-small: (
  * http://www.modularscale.com/?1.25&em&1.25&web&text
 */
 $font-size-medium: (
-    base: calc(12px + 0.35vw),
-    body: calc(12px + 1vw),
-    h1: 3.052rem,
-    h2: 2.441rem,
-    h3: 1.953em,
-    h4: 1.563rem,
-    p: 1.25rem,
-    code: 1rem
+base: calc(12px + 0.35vw),
+body: calc(12px + 1vw),
+h1: 3.052rem,
+h2: 2.441rem,
+h3: 1.953em,
+h4: 1.563rem,
+p: 1.25rem,
+code: 1rem
 );
 
 /*
@@ -43,14 +43,14 @@ $font-size-medium: (
  * http://www.modularscale.com/?1.25&em&1.33&web&text
 */
 $font-size-large: (
-    base: calc(12px + 0.35vw),
-    body: calc(12px + 1vw),
-    h1: 3.911rem,
-    h2: 2.941rem,
-    h3: 2.211rem,
-    h4: 1.663rem,
-    p: 1.25rem,
-    code: 1.25rem
+base: calc(12px + 0.35vw),
+body: calc(12px + 1vw),
+h1: 3.911rem,
+h2: 2.941rem,
+h3: 2.211rem,
+h4: 1.663rem,
+p: 1.25rem,
+code: 1.25rem
 );
 
 //$font-size-base: calc(12px + 0.35vw); /* Responsive base font size */
@@ -66,20 +66,20 @@ $font-size-large: (
 
 // Font Weights
 $font-weight: (
-    light: 300,
-    regular: 400,
-    medium: 500,
-    semibold: 600,
-    bold: 700,
-    xbold: 800,
-    black: 900
+light: 300,
+regular: 400,
+medium: 500,
+semibold: 600,
+bold: 700,
+xbold: 800,
+black: 900
 );
 
 // Vertical Rhythm
 $vertical-rhythm: (
-    small: map-get($line-height, small) * map-get($font-size-small, p),
-    medium: map-get($line-height, medium) * map-get($font-size-medium, p),
-    large: map-get($line-height, large) * map-get($font-size-large, p)
+small: map-get($line-height, small) * map-get($font-size-small, p),
+medium: map-get($line-height, medium) * map-get($font-size-medium, p),
+large: map-get($line-height, large) * map-get($font-size-large, p)
 );
 
 // Font Families
@@ -96,9 +96,9 @@ $font-family-code: source-code-pro, monospace;
 //source-code-pro, monospace;
 
 $border-radius: (
-    's': 0.15rem,
-    'm': 0.3rem,
-    'l': 0.5rem,
+'s': 0.15rem,
+'m': 0.3rem,
+'l': 0.5rem,
 );
 
 // Färgscheman
@@ -144,13 +144,13 @@ $color-gray-400: #59594f;
 $color-gray-500: #0d0d0d;
 
 // Textfärger
-$color-text-base: #ffffff;
+$color-text-base: #fff;
 $color-text-muted: #c7d2fe;
 $color-text-inverted: #1a202c;
 $color-fill-base: #1a202c;
-$color-button-accent: #ffffff;
-$color-button-accent-hover: #ffffff;
-$color-button-muted: #ffffff;
+$color-button-accent: #fff;
+$color-button-accent-hover: #fff;
+$color-button-muted: #fff;
 
 // Informativa svarsfärger
 $color-info: #4299e1;
@@ -164,7 +164,7 @@ $color-bitbucket: #205081;
 $color-discord: #7289da;
 $color-facebook: #3b5998;
 $color-flickr: #ff0084;
-$color-github: #333333;
+$color-github: #333;
 $color-gitlab: #fc6d26;
 $color-instagram: #e1306c;
 $color-linkedin: #0077b5;
@@ -174,24 +174,24 @@ $color-skype: #00aff0;
 $color-spotify: #1db954;
 $color-slack: #4a154b;
 $color-snapchat: #fffc00;
-$color-soundcloud: #ff5500;
+$color-soundcloud: #f50;
 $color-stackoverflow: #f48024;
-$color-telegram: #0088cc;
+$color-telegram: #08c;
 $color-twitch: #6441a5;
 $color-twitter: #1da1f2;
 $color-tumblr: #35465c;
 $color-vimeo: #1ab7ea;
 $color-whatsapp: #25d366;
 $color-yahoo: #400191;
-$color-youtube: #ff0000;
+$color-youtube: #f00;
 
 // Responsive Breakpoints
 $breakpoint: (
-    phone-only: 667px,
-    tablet-portrait: 668px,
-    tablet-landscape: 926px,
-    desktop: 1200px,
-    desktop-big: 1800px
+phone-only: 667px,
+tablet-portrait: 668px,
+tablet-landscape: 926px,
+desktop: 1200px,
+desktop-big: 1800px
 );
 
 // Screens Sizes?

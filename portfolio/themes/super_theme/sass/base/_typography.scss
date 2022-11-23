@@ -115,24 +115,26 @@ dd {
         text-decoration: none;
         color: $color-text-inverted;
 
-        & p {
+        p {
             @include font-size(p);
             font-style: italic;
             color: $color-text-inverted;
         }
 
-        @include for-size(phone-only) {
+        @include for-size(phone-only) { // stylelint-disable-line
             text-align: left;
         }
+
         @include for-size(tablet-portrait) {
             text-align: left;
         }
+
         @include for-size(tablet-landscape) {
             text-align: center;
         }
     }
 
-    .tagline_link {
+    .tagline_link { // stylelint-disable-line
         text-decoration: none;
         color: $color-primary-500;
     }
@@ -152,6 +154,56 @@ dd {
             @include for-size(tablet-landscape) {
                 text-align: center;
             }
+        }
+    }
+}
+
+
+.text {
+    &__p {
+        @include font-size(p);
+        font-family: $font-family-p;
+        font-weight: map-get($font-weight, light);
+        text-align: justify;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+        @include for-size(phone-only) {
+            padding-bottom: map-get($vertical-rhythm, 'small');
+        }
+        @include for-size(tablet-portrait) {
+            padding-bottom: map-get($vertical-rhythm, 'medium');
+        }
+        @include for-size(tablet-landscape) {
+            padding-bottom: map-get($vertical-rhythm, 'medium');
+        }
+        @include for-size(desktop) {
+            padding-bottom: map-get($vertical-rhythm, 'large');
+        }
+        @include for-size(destop-big) {
+            padding-bottom: map-get($vertical-rhythm, 'large');
+        }
+    }
+
+    &__h3 {
+        @include font-size(h3);
+        font-family: $font-family-title;
+        font-weight: map-get($font-weight, large);
+
+        @include for-size(phone-only) {
+            padding-bottom: map-get($vertical-rhythm, small);
+        }
+        @include for-size(tablet-portrait) {
+            padding-bottom: map-get($vertical-rhythm, 'small');
+        }
+        @include for-size(tablet-landscape) {
+            padding-bottom: map-get($vertical-rhythm, 'medium');
+        }
+        @include for-size(desktop) {
+            padding-bottom: map-get($vertical-rhythm, 'large');
+        }
+        @include for-size(destop-big) {
+            padding-bottom: map-get($vertical-rhythm, 'large'); // stylelint-disable-line
         }
     }
 }

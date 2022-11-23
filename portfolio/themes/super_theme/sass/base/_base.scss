@@ -66,12 +66,12 @@ body {
 // Base classes for margin/padding sizes
 $dimensions: ('m': 'margin', 'p': 'padding');
 $directions: (
-    't': 'top',
-    'b': 'bottom',
-    'l': 'left',
-    'r': 'right',
-    'y': '',
-    'x': '',
+'t': 'top',
+'b': 'bottom',
+'l': 'left',
+'r': 'right',
+'y': '',
+'x': '',
 );
 
 // Loop through dimensions and directions to create base classes for margins & paddings.

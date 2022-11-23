@@ -25,7 +25,7 @@
     //    padding: $pad-s;
     //}
 
-    .title_tagline {
+    .title_tagline { // stylelint-disable-line
         margin: auto 0;
 
         @include for-size(phone-only) {
@@ -42,7 +42,7 @@
         padding: divide(map-get($vertical-rhythm, small)) divide(map-get($vertical-rhythm, small)) map-get($vertical-rhythm, small) 0;
 
         &__hairline {
-            font-width: 100;
+            font-weight: 100;
         }
     }
 
@@ -74,7 +74,7 @@
         width: 100%;
         height: auto;
     }
-    
+
     .img {
         display: inline-block;
         margin: auto 0;

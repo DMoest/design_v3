@@ -55,7 +55,7 @@
                 border-radius: map-get($border-radius, small);
                 width: 50%;
                 padding-top: 8rem;
-                background-color: white;
+                background-color: #fff;
             }
             @include for-size(tablet-portrait) {
                 flex-flow: row wrap;
@@ -126,6 +126,6 @@
     }
 
     a {
-        color: #333333;
+        color: #333;
     }
 }
