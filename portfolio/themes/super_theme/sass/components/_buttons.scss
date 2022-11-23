@@ -2,6 +2,7 @@
 @import '../utilities/mixins';
 @import '../utilities/functions';
 
+
 .btn {
     display: inline-block;
     width: 100%;
@@ -9,13 +10,13 @@
     padding: 3rem 2rem;
 
     &-primary {
-        color: $color-text-base;
         background-color: $color-primary-300;
+        color: $color-text-base;
 
         &:hover,
         &:focus {
-            color: $color-text-base;
             background-color: $color-primary-200;
+            color: $color-text-base;
         }
 
         &:disabled {
@@ -25,13 +26,13 @@
     }
 
     &-secondary {
-        color: $color-text-base;
         background-color: $color-secondary-300;
+        color: $color-text-base;
 
         &:hover,
         &:focus {
-            color: $color-text-base;
             background-color: $color-secondary-200;
+            color: $color-text-base;
         }
 
         &:disabled {

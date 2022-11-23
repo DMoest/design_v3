@@ -8,14 +8,17 @@ html {
     font-size: 100%;
 }
 
+
 body {
-    font-family: $font-family;
     font-size: calc(12px + 0.35vw); /* Responsive base font size */
+    font-family: $font-family;
 }
+
 
 p {
     font-size: 1.25em;
 }
+
 
 //}
 
@@ -37,30 +40,36 @@ h1 {
     font-weight: map-get($font-weight, semibold);
 }
 
+
 h2 {
     @include font-size(h2);
     font-weight: map-get($font-weight, medium);
 }
+
 
 h3 {
     @include font-size(h3);
     font-weight: map-get($font-weight, medium);
 }
 
+
 h4 {
     @include font-size(h4);
     font-weight: map-get($font-weight, medium);
 }
+
 
 h5 {
     @include font-size(h5);
     font-weight: map-get($font-weight, medium);
 }
 
+
 h6 {
     @include font-size(h6);
     font-weight: map-get($font-weight, medium);
 }
+
 
 /* Vad är detta här? */
 p,
@@ -74,6 +83,7 @@ dd {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+
 
 .header {
     .title {
@@ -93,21 +103,22 @@ dd {
         }
 
         &__hairline {
+            position: relative;
             font-family: $font-family-title;
             font-weight: 100;
-            position: relative;
         }
     }
 
     .tagline {
-        font-family: $font-family-title;
         margin: 0;
+        font-family: $font-family-title;
         text-decoration: none;
         color: $color-text-inverted;
 
         & p {
             @include font-size(p);
             font-style: italic;
+            color: $color-text-inverted;
         }
 
         @include for-size(phone-only) {

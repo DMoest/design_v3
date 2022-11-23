@@ -2,14 +2,14 @@
 @import '../utilities/mixins';
 @import '../utilities/functions';
 
+
 .main {
     display: inline-block;
+    margin: 0;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    margin: 0;
-
-    background-color: $color-quinary-300;
+    background-color: $color-bg-light;
 
     @include for-size(phone-only) {
         padding: map-get($vertical-rhythm, small);
@@ -32,12 +32,13 @@
     }
 }
 
+
 .sidebar {
     //    DO A SIDEBAR
     display: inline-block;
+    border-radius: map-get($border-radius, small);
     width: 30%;
     height: 100%;
-    border-radius: map-get($border-radius, small);
     background-color: $color-quaternary-300;
 
     &.left {
@@ -49,19 +50,33 @@
     }
 
     &.flex-row {
-        display: flex;
         flex-direction: row;
+        display: flex;
     }
 
     &.flex-column {
-        display: flex;
         flex-direction: column;
+        display: flex;
     }
 }
 
-//.container {
-//    display: block;
-//    box-sizing: border-box;
-//    width: 100%;
-//    height: auto;
-//}
+
+.container {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+
+        &--cover {
+            width: 100%;
+            height: 10rem;
+            padding: 0;
+            object-fit: cover;
+        }
+    }
+}

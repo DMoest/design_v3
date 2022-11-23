@@ -4,17 +4,17 @@
 
 /* Footer */
 .footer {
-    display: flex;
     justify-content: space-between;
-    border-top: 1px solid #222;
-    background-color: $color-quinary-100;
-
+    display: flex;
+    border-top: 1px solid #222222;
+    background-color: $color-bg-light;
+    
     &__container {
         padding: map-get($vertical-rhythm, small);
     }
 
     a {
-        color: #222;
+        color: #222222;
     }
 
     &__social {

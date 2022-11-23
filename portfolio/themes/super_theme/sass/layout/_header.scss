@@ -2,18 +2,19 @@
 @import '../utilities/mixins';
 @import '../utilities/functions';
 
+
 .header {
-    position: relative;
-    z-index: 1000;
-    top: 0;
-    display: flex;
     align-content: stretch;
-    flex-flow: row wrap;
     justify-content: space-between;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    flex-flow: row wrap;
+    display: flex;
+    margin: 0;
     box-sizing: border-box;
     width: 100%;
     height: auto;
-    margin: 0;
     padding: divide(map-get($vertical-rhythm, small));
     background-color: $color-primary-100;
 
@@ -48,9 +49,9 @@
     //.tagline {}
 
     .logo {
+        flex-basis: fit-content;
         display: block;
         overflow: hidden;
-        flex-basis: fit-content;
         margin: auto 0;
     }
 
@@ -73,13 +74,13 @@
         width: 100%;
         height: auto;
     }
-
+    
     .img {
         display: inline-block;
-        width: 5rem;
-        height: 5rem;
-
         margin: auto 0;
         border-radius: 2500rem;
+
+        width: 5rem;
+        height: 5rem;
     }
 }

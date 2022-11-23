@@ -1,3 +1,12 @@
+// Fontawesome
+$fa-font-path: './../../shared/fontawesome/webfonts';
+@import './../../shared/css/font-awsome.min.css';
+@import './../../shared/fontawesome/scss/fontawesome';
+@import './../../shared/fontawesome/scss/brands';
+@import './../../shared/fontawesome/scss/solid';
+@import './../../shared/fontawesome/scss/regular';
+
+// SASS Modules
 @import 'utilities/variables';
 @import 'base/base';
 @import 'components/blockquote';
@@ -9,9 +18,8 @@
 @import 'components/navigation';
 @import 'layout/tables';
 @import 'layout/grids';
-@import 'components/content';
+@import 'layout/content';
 @import 'layout/footer';
 @import 'layout/header';
 
-// Include the shared CSS
-@import './../../shared/css/font-awsome.min.css';
+

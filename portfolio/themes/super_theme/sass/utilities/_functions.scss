@@ -4,6 +4,7 @@
     @return $value / $divider;
 }
 
+
 @function multiply($value, $factor: 2) {
     @return $value * $factor;
 }
