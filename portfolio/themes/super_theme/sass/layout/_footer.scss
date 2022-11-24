@@ -4,22 +4,49 @@
 
 /* Footer */
 .footer {
-    justify-content: space-between;
-    bottom: 0;
-    display: flex;
-    border-top: 1px solid #222;
+    display: inline-block;
+    //border-top: 1px solid $color-text-inverted;
     background-color: $color-bg-light;
 
-    &__container {
+    @include for-size(phone-only) {
         padding: map-get($vertical-rhythm, small);
     }
 
-    a {
-        color: #222;
+    @include for-size(tablet-portrait) {
+        padding: divide(map-get($vertical-rhythm, medium)) map-get($vertical-rhythm, medium);
+    }
+
+    @include for-size(tablet-landscape) {
+        padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium));
+    }
+
+    @include for-size(desktop) {
+        padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium), 4);
+    }
+
+    @include for-size(desktop-big) {
+        padding: map-get($vertical-rhythm, large) multiply(map-get($vertical-rhythm, large), 16);
+    }
+
+    &__content {
+        justify-content: space-between;
+        display: flex;
+    }
+
+    &__text {
+        display: inline-block;
+        margin: auto 0;
     }
 
     &__social {
-        @include font-size(p);
-        padding: map-get($vertical-rhythm, small);
+        //@include font-size(p);
+        display: inline-block;
+        margin: auto;
+        //padding: map-get($vertical-rhythm, small);
+        font-size: 1.5rem;
+
+        a {
+            color: $color-text-inverted;
+        }
     }
 }

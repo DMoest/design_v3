@@ -8,31 +8,32 @@ html {
     font-size: 100%;
 }
 
-
 body {
-    font-size: calc(12px + 0.35vw); /* Responsive base font size */
     font-family: $font-family;
-}
+    font-weight: map-get($font-weight, light);
 
+    @include for-size(phone-only) {
+        font-size: map-get($font-size-small, 'base'); /* Responsive base font size */
+    }
+    @include for-size(tablet-portrait) {
+        font-size: map-get($font-size-medium, 'base'); /* Responsive base font size */
+    }
+    @include for-size(tablet-landscape) {
+        font-size: map-get($font-size-medium, 'base'); /* Responsive base font size */
+    }
+    @include for-size(desktop) {
+        font-size: map-get($font-size-large, 'base'); /* Responsive base font size */
+    }
+    @include for-size(desktop-big) {
+        font-size: map-get($font-size-large, 'base'); /* Responsive base font size */
+    }
+}
 
 p {
     font-size: 1.25em;
+    font-family: $font-family-p;
 }
 
-
-//}
-
-//@include for-size(tablet-portrait) {
-//    html {
-//        font-size: 106.25%;
-//    }
-//}
-
-//@include for-size(tablet-landscape) {
-//    html {
-//        font-size: 112.5%;
-//    }
-//}
 
 // * --- Headers ---------- *
 h1 {
@@ -40,38 +41,31 @@ h1 {
     font-weight: map-get($font-weight, semibold);
 }
 
-
 h2 {
     @include font-size(h2);
     font-weight: map-get($font-weight, medium);
 }
-
 
 h3 {
     @include font-size(h3);
     font-weight: map-get($font-weight, medium);
 }
 
-
 h4 {
     @include font-size(h4);
     font-weight: map-get($font-weight, medium);
 }
-
 
 h5 {
     @include font-size(h5);
     font-weight: map-get($font-weight, medium);
 }
 
-
 h6 {
     @include font-size(h6);
     font-weight: map-get($font-weight, medium);
 }
 
-
-/* Vad är detta här? */
 p,
 td,
 th,
@@ -83,7 +77,6 @@ dd {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
-
 
 .header {
     .title {
@@ -158,6 +151,31 @@ dd {
     }
 }
 
+.subheading {
+    font-family: $font-family-subtitle;
+    font-weight: map-get($font-weight, medium);
+
+    @include for-size(phone-only) {
+        padding-top: map-get($vertical-rhythm, 'small');
+        padding-bottom: map-get($vertical-rhythm, 'small');
+    }
+    @include for-size(tablet-portrait) {
+        padding-top: map-get($vertical-rhythm, 'medium');
+        padding-bottom: map-get($vertical-rhythm, 'medium');
+    }
+    @include for-size(tablet-landscape) {
+        padding-top: map-get($vertical-rhythm, 'medium');
+        padding-bottom: map-get($vertical-rhythm, 'medium');
+    }
+    @include for-size(desktop) {
+        padding-top: map-get($vertical-rhythm, 'large');
+        padding-bottom: map-get($vertical-rhythm, 'large');
+    }
+    @include for-size(desktop-big) {
+        padding-top: map-get($vertical-rhythm, 'large');
+        padding-bottom: map-get($vertical-rhythm, 'large');
+    }
+}
 
 .text {
     &__p {
@@ -182,6 +200,42 @@ dd {
         }
         @include for-size(destop-big) {
             padding-bottom: map-get($vertical-rhythm, 'large');
+        }
+
+        &.first {
+            @include for-size(phone-only) {
+                padding-top: divide(map-get($vertical-rhythm, 'small'));
+            }
+            @include for-size(tablet-portrait) {
+                padding-top: divide(map-get($vertical-rhythm, 'medium'));
+            }
+            @include for-size(tablet-landscape) {
+                padding-top: divide(map-get($vertical-rhythm, 'medium'));
+            }
+            @include for-size(desktop) {
+                padding-top: divide(map-get($vertical-rhythm, 'large'));
+            }
+            @include for-size(destop-big) {
+                padding-top: divide(map-get($vertical-rhythm, 'large'));
+            }
+        }
+
+        &.last {
+            @include for-size(phone-only) {
+                padding-bottom: multiply(map-get($vertical-rhythm, 'small'));
+            }
+            @include for-size(tablet-portrait) {
+                padding-bottom: multiply(map-get($vertical-rhythm, 'medium'));
+            }
+            @include for-size(tablet-landscape) {
+                padding-bottom: multiply(map-get($vertical-rhythm, 'medium'));
+            }
+            @include for-size(desktop) {
+                padding-bottom: multiply(map-get($vertical-rhythm, 'large'));
+            }
+            @include for-size(destop-big) {
+                padding-bottom: multiply(map-get($vertical-rhythm, 'large'));
+            }
         }
     }
 
