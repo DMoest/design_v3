@@ -28,10 +28,10 @@
 
     {# --- NAVIGATION --- #}
     <div class="nav">
-        <div id="nav" class="nav-container" role="navigation" tabindex="-1">
-            <ul class="nav-container-menu">
+        <nav id="nav" class="nav-menu" role="navigation" tabindex="-1">
+            <ul>
                 {% for page in pages(depthOffset=-1) if page.title and not page.hidden %}
-                    <li class="button">
+                    <li class="">
                         {# --- SELECTED PAGE --- #}
                         {% if page.id==current_page.id %}
                             {% if page.meta.icon %}
@@ -60,6 +60,7 @@
                     </li>
                 {% endfor %}
             </ul>
-        </div>
+        </nav>
+        <a href="nav-toggle" id="nav-toggle" class="backdrop" hidden tabindex="-1"></a>
     </div>
 </div>
