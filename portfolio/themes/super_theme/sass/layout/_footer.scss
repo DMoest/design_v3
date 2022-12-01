@@ -41,7 +41,7 @@
     &__social {
         //@include font-size(p);
         display: inline-block;
-        margin: auto;
+        margin: auto 0;
         //padding: map-get($vertical-rhythm, small);
         font-size: 1.5rem;
 

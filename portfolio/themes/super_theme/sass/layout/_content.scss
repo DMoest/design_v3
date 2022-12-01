@@ -80,3 +80,86 @@
         }
     }
 }
+
+.landingpage {
+    gap: 1rem 1rem;
+    display: grid;
+
+    @include for-size(phone-only) {
+        grid-template-columns: 1fr;
+    }
+    @include for-size(tablet-portrait) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include for-size(tablet-landscape) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include for-size(desktop) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include for-size(desktop-big) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    h1 {
+        @include for-size(phone-only) {
+            grid-column: span 1;
+        }
+        @include for-size(tablet-portrait) {
+            grid-column: span 2;
+        }
+        @include for-size(tablet-landscape) {
+            grid-column: span 3;
+        }
+
+        justify-self: center;
+    }
+}
+
+.span {
+    &-1 {
+        grid-column: span 1;
+    }
+
+    &-2 {
+        @include for-size(phone-only) {
+            grid-column: span 1;
+        }
+        @include for-size(tablet-portrait) {
+            grid-column: span 2;
+        }
+    }
+
+    &-3 {
+        @include for-size(phone-only) {
+            grid-column: span 1;
+        }
+        @include for-size(tablet-portrait) {
+            grid-column: span 2;
+        }
+        @include for-size(tablet-landscape) {
+            grid-column: span 2;
+        }
+        @include for-size(desktop) {
+            grid-column: span 3;
+        }
+    }
+}
+
+.tech-box {
+    flex-basis: 22%;
+    overflow: hidden;
+    border-radius: map-get($border-radius, 'm');
+    background-color: #00d948;
+
+    a {
+        display: block;
+        padding: 1rem;
+        background-color: $color-primary-300;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $color-primary-200;
+        }
+    }
+}
