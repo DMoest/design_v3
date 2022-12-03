@@ -3,88 +3,178 @@
 @import '../utilities/functions';
 
 
-.main {
-    display: inline-block;
-    margin: 0;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    background-color: $color-bg-light;
-
-    @include for-size(phone-only) {
-        padding: 0 map-get($vertical-rhythm, small);
-    }
-
-    @include for-size(tablet-portrait) {
-        padding: divide(map-get($vertical-rhythm, medium)) map-get($vertical-rhythm, medium);
-    }
-
-    @include for-size(tablet-landscape) {
-        padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium));
-    }
-
-    @include for-size(desktop) {
-        padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium), 4);
-    }
-
-    @include for-size(desktop-big) {
-        padding: map-get($vertical-rhythm, large) multiply(map-get($vertical-rhythm, large), 16);
-    }
-}
-
-
-.sidebar {
-    //    DO A SIDEBAR
-    display: inline-block;
-    border-radius: map-get($border-radius, small);
-    width: 30%;
-    height: 100%;
-    background-color: $color-quaternary-300;
-
-    &.left {
-        float: left;
-    }
-
-    &.right {
-        float: right;
-    }
-
-    &.flex-row {
-        flex-direction: row;
-        display: flex;
-    }
-
-    &.flex-column {
-        flex-direction: column;
-        display: flex;
-    }
-}
-
-
+// BODY CONTAINER
 .container {
-    display: block;
+    display: grid;
     box-sizing: border-box;
     width: 100%;
     height: auto;
 
+    // MEDIA QUERIES
+    @include for-size(phone-only) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+            'header'
+            'main'
+            'footer'
+        ;
+    }
+    @include for-size(tablet-portrait) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            'header header'
+            'main main'
+            'main main'
+            'main main'
+            'footer footer'
+        ;
+    }
+    @include for-size(tablet-landscape) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            'header header header'
+            'main main main'
+            'footer footer footer'
+        ;
+    }
+
+    @include for-size(desktop) {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas:
+            'header header header header header'
+            'sidebar-left main main main sidebar-right'
+            'sidebar-left main main main sidebar-right'
+            'sidebar-left main main main sidebar-right'
+            'footer footer footer footer footer'
+        ;
+    }
+
+    // MAIN CONTENT CONTAINER
+    &__main {
+        display: inline-block;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        background-color: $color-bg-light;
+        grid-area: main;
+
+        // MEDIA QUERIES
+        @include for-size(phone-only) {
+            padding: 0 map-get($vertical-rhythm, small);
+        }
+        @include for-size(tablet-portrait) {
+            padding: 0 map-get($vertical-rhythm, medium);
+        }
+        @include for-size(tablet-landscape) {
+            padding: 0 multiply(map-get($vertical-rhythm, medium));
+        }
+        @include for-size(desktop) {
+            padding: 0 multiply(map-get($vertical-rhythm, medium), 4);
+        }
+        @include for-size(desktop-big) {
+            padding: 0 multiply(map-get($vertical-rhythm, large), 16);
+        }
+    }
+
+    // SIDEBAR CONTAINER
+    &__sidebar {
+        //display: inline-block;
+        width: 100%;
+        height: 100%;
+
+        // SIDES - Left/Right
+        &.left {
+            grid-area: sidebar-left;
+
+            // MEDIA QUERIES
+            @include for-size(phone-only) {
+                display: none;
+            }
+            @include for-size(tablet-portrait) {
+                display: none;
+            }
+            @include for-size(tablet-landscape) {
+                display: none;
+            }
+            @include for-size(desktop) {
+                display: inline-block;
+            }
+            @include for-size(desktop-big) {
+                display: inline-block;
+            }
+        }
+
+        &.right {
+            grid-area: sidebar-right;
+
+            // MEDIA QUERIES
+            @include for-size(phone-only) {
+                display: none;
+            }
+            @include for-size(tablet-portrait) {
+                display: none;
+            }
+            @include for-size(tablet-landscape) {
+                display: none;
+            }
+            @include for-size(desktop) {
+                display: inline-block;
+            }
+            @include for-size(desktop-big) {
+                display: inline-block;
+            }
+        }
+
+        // FLEXBOX STUFF ADDON CLASS
+        &.flex-row {
+            flex-direction: row;
+            display: flex;
+        }
+        &.flex-column {
+            flex-direction: column;
+            display: flex;
+        }
+    }
+
+    // IMAGE CONTAINER
     &__img {
         display: block;
         width: 100%;
         height: auto;
 
+        // COVER IMAGE
         &--cover {
             width: 100%;
             height: 10rem;
             padding: 0;
             object-fit: cover;
         }
+
+        //&--logo {
+        //
+        //}
     }
 }
 
+
+.test {
+    // MEDIA QUERIES
+    @include for-size(phone-only) {
+        display: none;
+    }
+    @include for-size(tablet-portrait) {
+        display: inline-block;
+        grid-area: sidebar-left;
+    }
+}
+
+// MAIN CONTENT CONTAINER FOR TEMPLATE 'technologies.twig'
 .landingpage {
     gap: 1rem 1rem;
     display: grid;
 
+    // MEDIA QUERIES
     @include for-size(phone-only) {
         grid-template-columns: 1fr;
     }
@@ -102,6 +192,9 @@
     }
 
     h1 {
+        justify-self: center;
+
+        // MEDIA QUERIES
         @include for-size(phone-only) {
             grid-column: span 1;
         }
@@ -111,17 +204,19 @@
         @include for-size(tablet-landscape) {
             grid-column: span 3;
         }
-
-        justify-self: center;
     }
 }
 
+// GRID SPAN CLASSES
 .span {
+    // 1fr SPAN CLASS
     &-1 {
         grid-column: span 1;
     }
 
+    // 2fr SPAN CLASS
     &-2 {
+        // MEDIA QUERIES - To fix issue with bigger grid items at small size screens.
         @include for-size(phone-only) {
             grid-column: span 1;
         }
@@ -130,7 +225,9 @@
         }
     }
 
+    // 3fr SPAN CLASS
     &-3 {
+        // MEDIA QUERIES - To fix issue with bigger grid items at small size screens.
         @include for-size(phone-only) {
             grid-column: span 1;
         }
@@ -146,6 +243,7 @@
     }
 }
 
+// GRID BOX CLASS - For grid items in template 'technologies.twig'
 .tech-box {
     flex-basis: 22%;
     overflow: hidden;

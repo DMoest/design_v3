@@ -6167,10 +6167,6 @@ ul {
   padding-left: 1.5em;
 }
 
-.hidden {
-  display: none !important;
-}
-
 html,
 body {
   z-index: 0;
@@ -9031,7 +9027,7 @@ p {
 }
 
 h1 {
-  font-size: 3.911rem;
+  font-size: 3.052rem;
   font-weight: 600;
 }
 @media only screen and (max-width: 667px) {
@@ -9061,7 +9057,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.941rem;
+  font-size: 2.441rem;
   font-weight: 500;
 }
 @media only screen and (max-width: 667px) {
@@ -9091,7 +9087,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.211rem;
+  font-size: 1.953em;
   font-weight: 500;
 }
 @media only screen and (max-width: 667px) {
@@ -9121,7 +9117,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.663rem;
+  font-size: 1.563rem;
   font-weight: 500;
 }
 @media only screen and (max-width: 667px) {
@@ -9169,7 +9165,7 @@ dd {
 }
 
 .header .title {
-  font-size: 3.911rem;
+  font-size: 3.052rem;
   font-family: highgate, sans-serif;
   text-decoration: none;
   color: #1a202c;
@@ -9445,7 +9441,7 @@ dd {
   }
 }
 .text__h3 {
-  font-size: 2.211rem;
+  font-size: 1.953em;
   font-family: highgate, sans-serif;
 }
 @media only screen and (max-width: 667px) {
@@ -9522,7 +9518,7 @@ dd {
 */
 .slide {
   overflow-y: hidden !important;
-  transition: height 0.5s ease-in !important;
+  transition: all 2s ease-in-out !important;
 }
 
 .js .nav-toggle {
@@ -9561,13 +9557,29 @@ dd {
   }
 }
 
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+}
+
 @media only screen and (max-width: 667px) {
   .nav ul {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 1000;
     display: block;
+    transition: all 3s ease;
     width: 200px;
     height: 100%;
     padding: 10rem 1rem 1rem;
@@ -9580,11 +9592,42 @@ dd {
   }
   .nav ul li a:hover,
   .nav ul li a:focus {
-    background-color: #4a154b;
+    background-color: #ffc14e;
     text-decoration: underline;
   }
-  .nav-menu {
+  .nav-toggle {
+    align-self: center;
+    flex-basis: fit-content;
+    display: none;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+@media only screen and (max-width: 667px) and (max-width: 667px) {
+  .nav-toggle > i {
+    font-size: 1.75rem;
+  }
+}
+@media only screen and (max-width: 667px) and (min-width: 668px) {
+  .nav-toggle > i {
+    font-size: 1.85rem;
+  }
+}
+@media only screen and (max-width: 667px) {
+  .nav .backdrop {
     position: absolute;
+    z-index: 998;
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+@media only screen and (max-width: 667px) {
+  .nav-menu {
+    position: fixed;
     top: 0;
     right: -200px;
     z-index: 999;
@@ -9598,6 +9641,17 @@ dd {
     display: block;
     outline: none;
   }
+  .nav-menu:target + .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: default;
+  }
 }
 .nav__link, .nav__link--active {
   align-content: center;
@@ -9606,10 +9660,6 @@ dd {
   gap: 1rem;
   display: flex;
   opacity: 0.8;
-  transition-property: background, opacity, transform;
-  transition-delay: 0.05s;
-  transition-duration: 0.1s;
-  transition-timing-function: linear;
   border-radius: 0.3rem;
   padding: 1rem;
   background-color: #d9d8d0;
@@ -9617,15 +9667,11 @@ dd {
   font-weight: 700;
   text-decoration: none;
 }
-.nav__link:hover, .nav__link--active:hover {
+.nav__link:hover, .nav__link:focus, .nav__link--active:hover, .nav__link--active:focus {
   opacity: 1;
-  transition-duration: 0.33s;
   background-color: #ffc14e;
 }
-.nav__link:focus, .nav__link:active, .nav__link--active:focus, .nav__link--active:active {
-  transform: translateY(3%);
-  transform: scale(98%);
-  transition-duration: 0.1s;
+.nav__link:active, .nav__link--active:active {
   background-color: #ffcf76;
 }
 .nav__link i, .nav__link--active i {
@@ -9636,11 +9682,6 @@ dd {
   opacity: 1;
   background-color: #ffc14e;
   color: #1a202c;
-}
-.nav-toggle {
-  display: none;
-  width: 3rem;
-  height: 3rem;
 }
 .nav a {
   color: #333;
@@ -9724,61 +9765,122 @@ dd {
  * Modular LARGE scale
  * http://www.modularscale.com/?1.25&em&1.33&web&text
 */
-.main {
+.container {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 667px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "header" "main" "footer";
+  }
+}
+@media only screen and (min-width: 668px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "header header" "main main" "main main" "main main" "footer footer";
+  }
+}
+@media only screen and (min-width: 926px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header header header" "main main main" "footer footer footer";
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "header header header header header" "sidebar-left main main main sidebar-right" "sidebar-left main main main sidebar-right" "sidebar-left main main main sidebar-right" "footer footer footer footer footer";
+  }
+}
+.container__main {
   display: inline-block;
   margin: 0;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
   background-color: #feffff;
+  grid-area: main;
 }
 @media only screen and (max-width: 667px) {
-  .main {
+  .container__main {
     padding: 0 1.21rem;
   }
 }
 @media only screen and (min-width: 668px) {
-  .main {
-    padding: 0.78125rem 1.5625rem;
+  .container__main {
+    padding: 0 1.5625rem;
   }
 }
 @media only screen and (min-width: 926px) {
-  .main {
-    padding: 1.5625rem 3.125rem;
+  .container__main {
+    padding: 0 3.125rem;
   }
 }
 @media only screen and (min-width: 1200px) {
-  .main {
-    padding: 1.5625rem 6.25rem;
+  .container__main {
+    padding: 0 6.25rem;
   }
 }
-
-.sidebar {
-  display: inline-block;
-  width: 30%;
+.container__sidebar {
+  width: 100%;
   height: 100%;
-  background-color: #732002;
 }
-.sidebar.left {
-  float: left;
+.container__sidebar.left {
+  grid-area: sidebar-left;
 }
-.sidebar.right {
-  float: right;
+@media only screen and (max-width: 667px) {
+  .container__sidebar.left {
+    display: none;
+  }
 }
-.sidebar.flex-row {
+@media only screen and (min-width: 668px) {
+  .container__sidebar.left {
+    display: none;
+  }
+}
+@media only screen and (min-width: 926px) {
+  .container__sidebar.left {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container__sidebar.left {
+    display: inline-block;
+  }
+}
+.container__sidebar.right {
+  grid-area: sidebar-right;
+}
+@media only screen and (max-width: 667px) {
+  .container__sidebar.right {
+    display: none;
+  }
+}
+@media only screen and (min-width: 668px) {
+  .container__sidebar.right {
+    display: none;
+  }
+}
+@media only screen and (min-width: 926px) {
+  .container__sidebar.right {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container__sidebar.right {
+    display: inline-block;
+  }
+}
+.container__sidebar.flex-row {
   flex-direction: row;
   display: flex;
 }
-.sidebar.flex-column {
+.container__sidebar.flex-column {
   flex-direction: column;
   display: flex;
-}
-
-.container {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  height: auto;
 }
 .container__img {
   display: block;
@@ -9790,6 +9892,18 @@ dd {
   height: 10rem;
   padding: 0;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 667px) {
+  .test {
+    display: none;
+  }
+}
+@media only screen and (min-width: 668px) {
+  .test {
+    display: inline-block;
+    grid-area: sidebar-left;
+  }
 }
 
 .landingpage {
@@ -9911,45 +10025,29 @@ dd {
  * Modular LARGE scale
  * http://www.modularscale.com/?1.25&em&1.33&web&text
 */
-/* Footer */
-.footer {
-  display: inline-block;
+.container__footer {
+  bottom: 0;
+  display: block;
   background-color: #feffff;
+  grid-area: footer;
 }
-@media only screen and (max-width: 667px) {
-  .footer {
-    padding: 1.21rem;
-  }
-}
-@media only screen and (min-width: 668px) {
-  .footer {
-    padding: 0.78125rem 1.5625rem;
-  }
-}
-@media only screen and (min-width: 926px) {
-  .footer {
-    padding: 1.5625rem 3.125rem;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .footer {
-    padding: 1.5625rem 6.25rem;
-  }
-}
-.footer__content {
+.container__footer--content {
   justify-content: space-between;
   display: flex;
 }
-.footer__text {
+.container__footer--text {
   display: inline-block;
   margin: auto 0;
+  padding: 1.21rem;
 }
-.footer__social {
+.container__footer--social {
+  align-self: center;
   display: inline-block;
   margin: auto 0;
+  padding: 1.21rem;
   font-size: 1.5rem;
 }
-.footer__social a {
+.container__footer--social a {
   color: #1a202c;
 }
 
@@ -9980,6 +10078,10 @@ dd {
  * http://www.modularscale.com/?1.25&em&1.33&web&text
 */
 .header {
+  grid-area: header;
+}
+
+.container__header {
   align-content: stretch;
   justify-content: space-between;
   position: relative;
@@ -9993,52 +10095,40 @@ dd {
   height: auto;
   padding: 0.605rem;
   background-color: #ffcf76;
+  grid-area: header;
 }
-.header .title_tagline {
+.container__header .title_tagline {
   margin: auto 0;
 }
 @media only screen and (max-width: 667px) {
-  .header .title_tagline {
+  .container__header .title_tagline {
     flex-basis: 12rem;
   }
 }
 @media only screen and (min-width: 668px) {
-  .header .title_tagline {
+  .container__header .title_tagline {
     flex-basis: fit-content;
   }
 }
-.header .title {
+.container__header .title {
   flex-basis: fit-content;
   margin: 0;
   padding: 0.605rem 0.605rem 1.21rem 0;
 }
-.header .title__hairline {
+.container__header .title__hairline {
   font-weight: 100;
 }
-.header .logo {
+.container__header .logo {
   flex-basis: fit-content;
   display: block;
   overflow: hidden;
   margin: auto 0;
 }
-.header .nav-toggle {
-  flex-basis: fit-content;
-}
-@media only screen and (max-width: 667px) {
-  .header .nav-toggle > i {
-    font-size: 1.75rem;
-  }
-}
-@media only screen and (min-width: 668px) {
-  .header .nav-toggle > i {
-    font-size: 1.85rem;
-  }
-}
-.header .link {
+.container__header .link {
   width: 100%;
   height: auto;
 }
-.header .img {
+.container__header .img {
   display: inline-block;
   margin: auto 0;
   border-radius: 2500rem;

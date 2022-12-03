@@ -21,18 +21,11 @@ ul {
     padding-left: 1.5em;
 }
 
-
-.hidden {
-    display: none !important;
-}
-
-
 html,
 body {
     z-index: 0;
     height: 100%;
 }
-
 
 html {
     overflow-x: hidden;
@@ -40,13 +33,11 @@ html {
     -ms-overflow-style: none; /* IE and Edge */
 }
 
-
 /* Placement */
 body {
     flex-direction: column;
     display: flex;
 }
-
 
 .flex {
     justify-content: space-between;
@@ -61,7 +52,6 @@ body {
         flex-direction: column;
     }
 }
-
 
 // Base classes for margin/padding sizes
 $dimensions: ('m': 'margin', 'p': 'padding');

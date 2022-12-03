@@ -4,6 +4,10 @@
 
 
 .header {
+    grid-area: header;
+}
+
+.container__header {
     align-content: stretch;
     justify-content: space-between;
     position: relative;
@@ -17,6 +21,7 @@
     height: auto;
     padding: divide(map-get($vertical-rhythm, small));
     background-color: $color-primary-100;
+    grid-area: header;
 
     //@include for-size(phone-only) {
     //    padding: $pad-xs;
@@ -53,21 +58,6 @@
         display: block;
         overflow: hidden;
         margin: auto 0;
-    }
-
-    .nav-toggle {
-        flex-basis: fit-content;
-
-        @include for-size(phone-only) {
-            > i {
-                font-size: 1.75rem;
-            }
-        }
-        @include for-size(tablet-portrait) {
-            > i {
-                font-size: 1.85rem;
-            }
-        }
     }
 
     .link {

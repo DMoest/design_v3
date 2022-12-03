@@ -2,47 +2,50 @@
 @import '../utilities/mixins';
 @import '../utilities/functions';
 
-/* Footer */
-.footer {
-    display: inline-block;
-    //border-top: 1px solid $color-text-inverted;
+// FOOTER CONTAINER
+.container__footer {
+    //position: fixed;
+    bottom: 0;
+    display: block;
     background-color: $color-bg-light;
+    grid-area: footer;
 
-    @include for-size(phone-only) {
-        padding: map-get($vertical-rhythm, small);
-    }
+    //@include for-size(phone-only) {
+    //    padding: map-get($vertical-rhythm, small);
+    //}
+    //@include for-size(tablet-portrait) {
+    //    padding: divide(map-get($vertical-rhythm, medium)) map-get($vertical-rhythm, medium);
+    //}
+    //@include for-size(tablet-landscape) {
+    //    padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium));
+    //}
+    //@include for-size(desktop) {
+    //    padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium), 4);
+    //}
+    //@include for-size(desktop-big) {
+    //    padding: map-get($vertical-rhythm, large) multiply(map-get($vertical-rhythm, large), 16);
+    //}
 
-    @include for-size(tablet-portrait) {
-        padding: divide(map-get($vertical-rhythm, medium)) map-get($vertical-rhythm, medium);
-    }
-
-    @include for-size(tablet-landscape) {
-        padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium));
-    }
-
-    @include for-size(desktop) {
-        padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium), 4);
-    }
-
-    @include for-size(desktop-big) {
-        padding: map-get($vertical-rhythm, large) multiply(map-get($vertical-rhythm, large), 16);
-    }
-
-    &__content {
+    // FOOTER CONTENT CONTAINER
+    &--content {
         justify-content: space-between;
         display: flex;
     }
 
-    &__text {
+    // FOOTER TEXT CONTAINER
+    &--text {
         display: inline-block;
         margin: auto 0;
+        padding: map-get($vertical-rhythm, small);
     }
 
-    &__social {
+    // FOOTER SOCIAL ICON CONTAINER
+    &--social {
         //@include font-size(p);
+        align-self: center;
         display: inline-block;
         margin: auto 0;
-        //padding: map-get($vertical-rhythm, small);
+        padding: map-get($vertical-rhythm, small);
         font-size: 1.5rem;
 
         a {
