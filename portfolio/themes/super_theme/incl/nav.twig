@@ -1,66 +1,41 @@
-<div class="container">
-    <div class="header" role="banner">
-        {# --- LOGO --- #}
-        {% if pages["_meta"].meta.logo %}
-            <div class="logo">
-                <a class="link" href="{{ base_url }}">
-                    <img class="img" src="{{ base_url }}/{{ pages["_meta"].meta.logo|url }}"
-                         alt="Logo image"/>
-                </a>
-            </div>
-        {% endif %}
+{# --- NAVIGATION --- #}
+<div class="nav">
+    <nav id="nav" class="nav-menu" role="navigation" tabindex="-1">
+        <ul>
+            {% for page in pages(depthOffset=-1) if page.title and not page.hidden %}
+                <li class="">
 
-        {# --- TITLE --- #}
-        <div class="title_tagline" {{ pages["_meta"].meta.tagline ? ' class="tagline"' }}>
-            <h1 class="title">{{ site_title }}</h1>
-            <a class="tagline_link tagline link" href="{{ base_url }}">
-                {{ pages["_meta"].meta.tagline|markdown }}
-            </a>
-        </div>
-
-        {# --- MENU --- #}
-        <a class="nav-toggle" id="nav-toggle" title="Toggle Menu" role="button" aria-controls="nav"
-           aria-expanded="false">
-            <i class="fa fa-bars" aria-hidden="true" id="toggler"></i>
-            <span class="sr-only">Toggle Menu</span>
-        </a>
-    </div>
-
-    {# --- NAVIGATION --- #}
-    <div class="nav">
-        <nav id="nav" class="nav-menu" role="navigation" tabindex="-1">
-            <ul>
-                {% for page in pages(depthOffset=-1) if page.title and not page.hidden %}
-                    <li class="">
-                        {# --- SELECTED PAGE --- #}
-                        {% if page.id==current_page.id %}
-                            {% if page.meta.icon %}
-                                <a class="nav__link--active" href="{{ page.url }}">
-                                    <i class="nav__linkIcon--active {{ page.meta.icon }}"></i>
-                                    <p class="nav__linkText--active">{{ page.title }}</p>
-                                </a>
-                            {% else %}
-                                <a class="nav__link--active" href="{{ page.url }}">
-                                    <p class="nav__linkText--active">{{ page.title }}</p>
-                                </a>
-                            {% endif %}
+                    {# --- SELECTED PAGE --- #}
+                    {% if page.id==current_page.id %}
+                        {% if page.meta.icon %}
+                            <a class="nav__link--active" href="{{ page.url }}">
+                                <i class="nav__linkIcon--active {{ page.meta.icon }}"></i>
+                                <p class="nav__linkText--active">{{ page.title }}</p>
+                            </a>
                         {% else %}
-                            {# --- THE OTHER PAGEs --- #}
-                            {% if page.meta.icon %}
-                                <a class="nav__link" href="{{ page.url }}">
-                                    <i class="nav__linkIcon {{ page.meta.icon }}"></i>
-                                    <p class="nav__linkText">{{ page.title }}</p>
-                                </a>
-                            {% else %}
-                                <a class="nav__link" href="{{ page.url }}">
-                                    <p class="nav__linkText">{{ page.title }}</p>
-                                </a>
-                            {% endif %}
+                            <a class="nav__link--active" href="{{ page.url }}">
+                                <p class="nav__link--textActive">{{ page.title }}</p>
+                            </a>
                         {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
-        </nav>
-        <a href="nav-toggle" id="nav-toggle" class="backdrop" hidden tabindex="-1"></a>
-    </div>
+
+                    {# --- THE OTHER PAGEs --- #}
+                    {% else %}
+                        {% if page.meta.icon %}
+                            <a class="nav__link" href="{{ page.url }}">
+                                <i class="nav__link--icon {{ page.meta.icon }}"></i>
+                                <p class="nav__link--text">{{ page.title }}</p>
+                            </a>
+                        {% else %}
+                            <a class="nav__link" href="{{ page.url }}">
+                                <p class="nav__link--text">{{ page.title }}</p>
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+{#    <a href="#toggler" id="nav-backdrop" class="backdrop nav-toggle" hidden tabindex="-1"></a>#}
+{#    <a href="#nav-toggle" id="nav-backdrop" class="backdrop"></a>#}
 </div>

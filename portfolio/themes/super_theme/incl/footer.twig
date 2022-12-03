@@ -1,24 +1,28 @@
-<div class="footer">
-    <div class="footer__content">
-        <div class="footer__text">
-            <p class="footer__text">
-                En webbplats skapad av Daniel Andersson, daap19, för kursen Design.
-            </p>
-        </div>
+    {# FOOTER INCLUDED FROM index.twig #}
+    <footer class="container__footer">
+        <div class="container__footer--content">
+            <div class="container__footer--text">
+                <p class="footer__text">
+                    En webbplats skapad av Daniel Andersson, daap19, för kursen Design.
+                </p>
+            </div>
 
-        <div class="footer__social social">
-            <!-- Loads from FontAwesome (themes/shared/css/font-awesome.min.css) -->
-            {% for social in pages["_meta"].meta.social %}
-                <a href="{{ social.url }}" title="{{ social.title }}" role="button">
-                    <i class="{{ social.icon }}" aria-hidden="true"></i>
-                    <span class="sr-only">{{ social.title }}</span>
-                </a>
-            {% endfor %}
+            <div class="container__footer--social">
+                <!-- Loads from FontAwesome (themes/shared/css/font-awesome.min.css) -->
+                {% for social in pages["_meta"].meta.social %}
+                    <a href="{{ social.url }}" title="{{ social.title }}" role="button">
+                        <i class="{{ social.icon }}" aria-hidden="true"></i>
+                        <span class="sr-only">{{ social.title }}</span>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</div>
+    </footer>
 
-<script src="{{ theme_url }}/../shared//js/modernizr-3.3.1-custom.min.js"
-        type="text/javascript"></script>
-<script src="{{ theme_url }}/../shared//js/utils.js" type="text/javascript"></script>
-<script src="{{ theme_url }}/../shared//js/responsive-navbar.js" type="text/javascript"></script>
+
+    {# Applied JavaScript's #}
+    <script src="{{ theme_url }}/../shared/js/modernizr-3.3.1-custom.min.js"
+            type="text/javascript"></script>
+    <script src="{{ theme_url }}/../shared/js/utils.js" type="text/javascript"></script>
+    <script src="{{ theme_url }}/../shared/js/responsive-navbar.js" type="text/javascript"></script>
+</html>
