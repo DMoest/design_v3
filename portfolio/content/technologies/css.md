@@ -1,6 +1,6 @@
 ---
 title: CSS
-description: This is the CSS page.
+description: This is the page about the CSS technology.
 icon: fas fa-code
 template: technologies
 ---

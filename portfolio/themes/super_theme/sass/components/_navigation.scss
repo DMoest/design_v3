@@ -123,6 +123,7 @@
                 outline: none;
             }
 
+            // TODO: Fixa så att click utanför menyn på mobile stänger menyn & tar bort backdrop...
             &:target + .backdrop {
                 position: fixed;
                 top: 0;
@@ -145,10 +146,10 @@
         gap: 1rem;
         display: flex;
         opacity: 0.8;
-        //transition-property: background, opacity, transform;
-        //transition-delay: 0.05s;
-        //transition-duration: 0.1s;
-        //transition-timing-function: linear;
+        transition-property: background, opacity, transform;
+        transition-delay: 0.05s;
+        transition-duration: 0.1s;
+        transition-timing-function: linear;
         border-radius: map-get($border-radius, 'm');
         padding: 1rem;
         background-color: $color-gray-200;

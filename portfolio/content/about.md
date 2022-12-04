@@ -6,7 +6,8 @@ icon: fa fa-solid fa-user
 
 ![bild på mig](%assets_url%/img/dreamland.jpg) {.container__img--cover}
 
-## Kort om mig, Daniel {.subheading}
+Kort om mig, Daniel {.subheading}
+=========================
 
 <p class="text__p">
     Mitt namn är Daniel, jag är student vid Blekinge Tekniska Högskola på 

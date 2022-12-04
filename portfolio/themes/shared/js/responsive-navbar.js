@@ -9,14 +9,14 @@
  * @version 2.1
  */
 
-function main()
-{
+function main() {
     // capability CSS classes
     document.documentElement.className = 'js';
 
     // wrap tables
-    var tables = document.querySelectorAll('#main > .container > table');
-    for (var i = 0; i < tables.length; i++) {
+    let tables = document.querySelectorAll('#main > .container > table');
+
+    for (let i = 0; i < tables.length; i++) {
         if (!/\btable-responsive\b/.test(tables[i].parentElement.className)) {
             var tableWrapper = document.createElement('div');
             tableWrapper.className = 'table-responsive';
@@ -27,9 +27,9 @@ function main()
     }
 
     // responsive menu
-    var menu = document.getElementById('nav'),
+    let menu = document.getElementById('nav'),
         menuToggle = document.getElementById('nav-toggle'),
-        navIcon = document.getElementById('toggler')
+        navIcon = document.getElementById('toggler'),
         toggleMenuEvent = function (event) {
             if (event.type === 'keydown') {
                 if ((event.keyCode != 13) && (event.keyCode != 32)) {

@@ -171,24 +171,43 @@
 
 // MAIN CONTENT CONTAINER FOR TEMPLATE 'technologies.twig'
 .landingpage {
-    gap: 1rem 1rem;
-    display: grid;
+    //gap: 1rem 1rem;
+    //display: grid;
+    grid-area: main;
 
     // MEDIA QUERIES
     @include for-size(phone-only) {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+            'header'
+            'main'
+            'footer';
     }
     @include for-size(tablet-portrait) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            'header header'
+            'main main'
+            'main main'
+            'main main'
+            'footer footer';
     }
     @include for-size(tablet-landscape) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            'header header header'
+            'main main main'
+            'footer footer footer';
     }
+
     @include for-size(desktop) {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    @include for-size(desktop-big) {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas:
+            'header header header header header'
+            'sidebar-left main main main sidebar-right'
+            'sidebar-left main main main sidebar-right'
+            'sidebar-left main main main sidebar-right'
+            'footer footer footer footer footer';
     }
 
     h1 {
@@ -204,6 +223,9 @@
         @include for-size(tablet-landscape) {
             grid-column: span 3;
         }
+    }
+
+    p {
     }
 }
 

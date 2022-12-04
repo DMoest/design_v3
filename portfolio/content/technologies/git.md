@@ -1,4 +1,11 @@
-# Git {.subheading}
+---
+title: Git
+description: This is the page about the Git technology.
+icon: fas fa-code
+template: technologies
+---
+
+## Git {.subheading}
 
 Git är ett distribuerat versionshanteringssystem som skapades 2005 av Linus Torvalds. Git skapades för att hantera ändringar för Linux-kärnan.
 

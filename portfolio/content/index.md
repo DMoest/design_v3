@@ -4,7 +4,8 @@ description: Det här är webbplatsens startsida.
 icon: fab fa-canadian-maple-leaf
 ---
 
-## Hem {.subheading}
+Hem {.subheading}
+==========================
 
 <p class="text__p">
     Välkommen till min webbplats skapad för kursen Design (V3) vid Blekinge Tekniska Högskola

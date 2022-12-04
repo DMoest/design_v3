@@ -13,23 +13,23 @@ Technologies {.subheading}
 </div>
 
 <div class="tech-box span-2">
-    <a href="technologies/html">CSS</a>
+    <a href="technologies/css">CSS</a>
 </div>
 
 <div class="tech-box span-1">
-    <a href="technologies/html">JavaScript</a>
+    <a href="technologies/javascript">JavaScript</a>
 </div>
 
 <div class="tech-box span-1">
-    <a href="technologies/html">PHP</a>
+    <a href="technologies/php">PHP</a>
 </div>
 
 <div class="tech-box span-1">
-    <a href="technologies/html">SQL</a>
+    <a href="technologies/sqlite">SQLite</a>
 </div>
 
 <div class="tech-box span-3">
-    <a href="technologies/html">Python</a>
+    <a href="technologies/python">Python</a>
 </div>
 
 <div class="tech-box span-1">

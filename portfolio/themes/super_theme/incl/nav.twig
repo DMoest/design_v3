@@ -3,8 +3,7 @@
     <nav id="nav" class="nav-menu" role="navigation" tabindex="-1">
         <ul>
             {% for page in pages(depthOffset=-1) if page.title and not page.hidden %}
-                <li class="">
-
+                <li>
                     {# --- SELECTED PAGE --- #}
                     {% if page.id==current_page.id %}
                         {% if page.meta.icon %}

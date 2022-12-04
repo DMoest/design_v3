@@ -9660,6 +9660,10 @@ dd {
   gap: 1rem;
   display: flex;
   opacity: 0.8;
+  transition-property: background, opacity, transform;
+  transition-delay: 0.05s;
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
   border-radius: 0.3rem;
   padding: 1rem;
   background-color: #d9d8d0;
@@ -9907,27 +9911,30 @@ dd {
 }
 
 .landingpage {
-  gap: 1rem 1rem;
-  display: grid;
+  grid-area: main;
 }
 @media only screen and (max-width: 667px) {
   .landingpage {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "header" "main" "footer";
   }
 }
 @media only screen and (min-width: 668px) {
   .landingpage {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "header header" "main main" "main main" "main main" "footer footer";
   }
 }
 @media only screen and (min-width: 926px) {
   .landingpage {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header header header" "main main main" "footer footer footer";
   }
 }
 @media only screen and (min-width: 1200px) {
   .landingpage {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "header header header header header" "sidebar-left main main main sidebar-right" "sidebar-left main main main sidebar-right" "sidebar-left main main main sidebar-right" "footer footer footer footer footer";
   }
 }
 .landingpage h1 {
@@ -9948,7 +9955,6 @@ dd {
     grid-column: span 3;
   }
 }
-
 .span-1 {
   grid-column: span 1;
 }

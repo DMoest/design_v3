@@ -63,3 +63,13 @@ DummyPlugin.enabled: false    # Force the plugin "DummyPlugin" to be disabled
 #
 shaded_url: themes/shared     # You can access custom settings in themes
                               # using {{ config.my_custom_setting }}
+
+# Pagination Plugin
+#pagination_limit: 5           # Number of posts per page
+#pagination_page_indicator: "page"
+#pagination_filter_date: true
+#pagination_next_text: "Nästa >"
+#pagination_prev_text: "< Tidigare"
+#pagination_flip_links: false
+#pagination_output_format: "links"
+#pagination_sub_page: false

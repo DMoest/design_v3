@@ -1,3 +1,10 @@
+---
+title: PHP
+description: This is the page about the PHP technology.
+icon: fas fa-code
+template: technologies
+---
+
 ## PHP {.subheading}
 
 PHP är ett populärt skriptspråk som främst används för att skapa webbplatser med dynamiskt innehåll. PHP är det mest använda server-side programmeringsspråk på webben med uppåt 80% av alla webbplatser som använder det.

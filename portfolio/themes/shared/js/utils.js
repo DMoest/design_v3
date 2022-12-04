@@ -9,15 +9,14 @@
  * @version 2.1
  */
 
-utils = {};
+const utils = {};
 
 /**
  * Checks whether the client's browser is able to slide elements or not
  *
  * @return {bool} TRUE when the browser supports sliding, FALSE otherwise
  */
-utils.canSlide = function ()
-{
+utils.canSlide = function () {
     return (Modernizr.classlist && Modernizr.requestanimationframe && Modernizr.csstransitions);
 };
 
@@ -29,8 +28,7 @@ utils.canSlide = function ()
  *     been finished (i.e. the element is hidden)
  * @param {function}    startCallback  function to call when the animation starts
  */
-utils.slideUp = function (element, finishCallback, startCallback)
-{
+utils.slideUp = function (element, finishCallback, startCallback) {
     if (!utils.canSlide()) {
         if (startCallback) startCallback();
         element.className += (element.className !== '') ? ' hidden' : 'hidden';
@@ -76,8 +74,7 @@ utils.slideUp = function (element, finishCallback, startCallback)
  *     been finished (i.e. the element is visible)
  * @param {function}    startCallback  function to call when the animation starts
  */
-utils.slideDown = function (element, finishCallback, startCallback)
-{
+utils.slideDown = function (element, finishCallback, startCallback) {
     if (!utils.canSlide()) {
         if (startCallback) startCallback();
         element.className = element.className.replace(/\bhidden\b */g, '');
@@ -128,7 +125,6 @@ utils.slideDown = function (element, finishCallback, startCallback)
  *
  * @return {bool} TRUE when the element is visible, FALSE otherwise
  */
-utils.isElementVisible = function (element)
-{
+utils.isElementVisible = function (element) {
     return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
 };

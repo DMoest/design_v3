@@ -1,4 +1,11 @@
-# HTML {.subheading}
+---
+title: HTML
+description: This is the page about the HTML technology.
+icon: fas fa-code
+template: technologies
+---
+
+## HTML {.subheading}
 
 HyperText Markup Language (HTML) utgör tillsammans med HyperText Transfer Protocol (HTTP) grunden i webben. Webbsidor skrivs i HTML och skickas sedan över internet med hjälp av HTTP.
 
