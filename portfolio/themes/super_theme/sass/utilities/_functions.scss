@@ -1,9 +1,9 @@
 // Functions to multiply/divide values by a factor.
 // Default factor/divider is 2.
 @function divide($value, $divider: 2) {
-    @return $value / $divider;
+    @return calc($value / $divider);
 }
 
 @function multiply($value, $factor: 2) {
-    @return $value * $factor;
+    @return calc($value * $factor);
 }

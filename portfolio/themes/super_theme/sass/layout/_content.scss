@@ -112,7 +112,7 @@
             }
         }
         @include for-size(tablet-portrait) {
-            padding: 0 map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium)) 0;
+            padding: 0 map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium));
 
             h1,
             h2,
@@ -128,7 +128,7 @@
             }
         }
         @include for-size(tablet-landscape) {
-            padding: 0 map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium)) 0;
+            padding: 0 map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium));
 
             h1,
             h2,
@@ -144,7 +144,7 @@
             }
         }
         @include for-size(desktop) {
-            padding: 0 map-get($vertical-rhythm, large) multiply(map-get($vertical-rhythm, large)) 0;
+            padding: 0 map-get($vertical-rhythm, large) multiply(map-get($vertical-rhythm, large));
 
             h1,
             h2,

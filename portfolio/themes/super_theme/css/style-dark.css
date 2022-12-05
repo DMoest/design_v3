@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import './../../shared/css/font-awsome.min.css';
 /*!
  * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
@@ -10209,4 +10210,9 @@ dd {
   border-radius: 2500rem;
   width: 5rem;
   height: 5rem;
+}
+
+/* Längst ner i min style-dark.scss */
+.container {
+  background-color: yellow;
 }
