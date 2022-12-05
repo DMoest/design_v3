@@ -1,0 +1,7 @@
+<div class="container__sidebar left" role="sidebar-left">
+        <div class="container__sidebar--technav">
+            {% for page in pages('/technologies') if page.title and not page.hidden %}
+                <a href="{{ page.url }}" class="container__sidebar--link">{{ page.title }}</a>
+            {% endfor %}
+        </div>
+</div>
