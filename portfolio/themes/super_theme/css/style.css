@@ -9783,14 +9783,14 @@ dd {
 }
 @media only screen and (min-width: 668px) {
   .container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "header header" "main main" "main main" "main main" "footer footer";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header header header" "sidebar-left main main" "sidebar-left main main" "sidebar-left main main" "footer footer footer";
   }
 }
 @media only screen and (min-width: 926px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "header header header" "main main main" "footer footer footer";
+    grid-template-areas: "header header header" "sidebar-left main main" "sidebar-left main main" "sidebar-left main main" "footer footer footer";
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -9825,12 +9825,28 @@ dd {
 }
 @media only screen and (min-width: 1200px) {
   .container__main {
-    padding: 0 6.25rem;
+    padding: 0 6.65rem;
   }
 }
 .container__sidebar {
   width: 100%;
   height: 100%;
+}
+.container__sidebar--technav {
+  justify-content: space-between;
+  flex-flow: wrap column;
+  gap: 0.605rem;
+  display: flex;
+  padding: 1.21rem 0.605rem;
+}
+.container__sidebar--link {
+  display: block;
+  margin: auto 0;
+  border-radius: 0.15rem;
+  padding: 0.605rem;
+  background-color: #4a154b;
+  text-decoration: none;
+  color: white;
 }
 .container__sidebar.left {
   grid-area: sidebar-left;
@@ -9842,12 +9858,12 @@ dd {
 }
 @media only screen and (min-width: 668px) {
   .container__sidebar.left {
-    display: none;
+    display: inline-block;
   }
 }
 @media only screen and (min-width: 926px) {
   .container__sidebar.left {
-    display: none;
+    display: inline-block;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -9901,6 +9917,7 @@ dd {
 @media only screen and (max-width: 667px) {
   .test {
     display: none;
+    opacity: 0;
   }
 }
 @media only screen and (min-width: 668px) {
@@ -9911,30 +9928,14 @@ dd {
 }
 
 .landingpage {
+  gap: 1rem 1rem;
+  display: grid;
   grid-area: main;
 }
 @media only screen and (max-width: 667px) {
   .landingpage {
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas: "header" "main" "footer";
-  }
-}
-@media only screen and (min-width: 668px) {
-  .landingpage {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "header header" "main main" "main main" "main main" "footer footer";
-  }
-}
-@media only screen and (min-width: 926px) {
-  .landingpage {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "header header header" "main main main" "footer footer footer";
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .landingpage {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-areas: "header header header header header" "sidebar-left main main main sidebar-right" "sidebar-left main main main sidebar-right" "sidebar-left main main main sidebar-right" "footer footer footer footer footer";
   }
 }
 .landingpage h1 {
@@ -9965,6 +9966,11 @@ dd {
 }
 @media only screen and (min-width: 668px) {
   .span-2 {
+    grid-column: span 1;
+  }
+}
+@media only screen and (min-width: 926px) {
+  .span-2 {
     grid-column: span 2;
   }
 }
@@ -9979,11 +9985,6 @@ dd {
   }
 }
 @media only screen and (min-width: 926px) {
-  .span-3 {
-    grid-column: span 2;
-  }
-}
-@media only screen and (min-width: 1200px) {
   .span-3 {
     grid-column: span 3;
   }

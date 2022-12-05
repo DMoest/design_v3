@@ -20,25 +20,38 @@
         ;
     }
     @include for-size(tablet-portrait) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
-            'header header'
-            'main main'
-            'main main'
-            'main main'
-            'footer footer'
+            'header header header'
+            'sidebar-left main main'
+            'sidebar-left main main'
+            'sidebar-left main main'
+            'footer footer footer'
         ;
     }
     @include for-size(tablet-landscape) {
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
             'header header header'
-            'main main main'
+            'sidebar-left main main'
+            'sidebar-left main main'
+            'sidebar-left main main'
             'footer footer footer'
         ;
     }
 
     @include for-size(desktop) {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas:
+            'header header header header header'
+            'sidebar-left main main main sidebar-right'
+            'sidebar-left main main main sidebar-right'
+            'sidebar-left main main main sidebar-right'
+            'footer footer footer footer footer'
+        ;
+    }
+
+    @include for-size(desktop-big) {
         grid-template-columns: repeat(5, 1fr);
         grid-template-areas:
             'header header header header header'
@@ -70,18 +83,35 @@
             padding: 0 multiply(map-get($vertical-rhythm, medium));
         }
         @include for-size(desktop) {
-            padding: 0 multiply(map-get($vertical-rhythm, medium), 4);
+            padding: 0 multiply(map-get($vertical-rhythm, large), 4);
         }
-        @include for-size(desktop-big) {
-            padding: 0 multiply(map-get($vertical-rhythm, large), 16);
-        }
+        //@include for-size(desktop-big) {
+        //    padding: 0 multiply(map-get($vertical-rhythm, large), 16);
+        //}
     }
 
     // SIDEBAR CONTAINER
     &__sidebar {
-        //display: inline-block;
         width: 100%;
         height: 100%;
+
+        &--technav {
+            justify-content: space-between;
+            flex-flow: wrap column;
+            gap: divide(map-get($vertical-rhythm, small));
+            display: flex;
+            padding: map-get($vertical-rhythm, small) divide(map-get($vertical-rhythm, small));
+        }
+
+        &--link {
+            display: block;
+            margin: auto 0;
+            border-radius: map-get($border-radius, s);
+            padding: divide(map-get($vertical-rhythm, small));
+            background-color: #4a154b;
+            text-decoration: none;
+            color: white;
+        }
 
         // SIDES - Left/Right
         &.left {
@@ -92,10 +122,10 @@
                 display: none;
             }
             @include for-size(tablet-portrait) {
-                display: none;
+                display: inline-block;
             }
             @include for-size(tablet-landscape) {
-                display: none;
+                display: inline-block;
             }
             @include for-size(desktop) {
                 display: inline-block;
@@ -162,6 +192,7 @@
     // MEDIA QUERIES
     @include for-size(phone-only) {
         display: none;
+        opacity: 0;
     }
     @include for-size(tablet-portrait) {
         display: inline-block;
@@ -171,9 +202,9 @@
 
 // MAIN CONTENT CONTAINER FOR TEMPLATE 'technologies.twig'
 .landingpage {
-    //gap: 1rem 1rem;
-    //display: grid;
-    grid-area: main;
+    gap: 1rem 1rem;
+    display: grid;
+    grid-area: main; // This element is part of the main-grid.
 
     // MEDIA QUERIES
     @include for-size(phone-only) {
@@ -183,32 +214,40 @@
             'main'
             'footer';
     }
-    @include for-size(tablet-portrait) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas:
-            'header header'
-            'main main'
-            'main main'
-            'main main'
-            'footer footer';
-    }
-    @include for-size(tablet-landscape) {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
-            'header header header'
-            'main main main'
-            'footer footer footer';
-    }
-
-    @include for-size(desktop) {
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-areas:
-            'header header header header header'
-            'sidebar-left main main main sidebar-right'
-            'sidebar-left main main main sidebar-right'
-            'sidebar-left main main main sidebar-right'
-            'footer footer footer footer footer';
-    }
+    //@include for-size(tablet-portrait) {
+    //    grid-template-columns: repeat(2, 1fr);
+    //    grid-template-areas:
+    //        'header'
+    //        'main'
+    //        'footer';
+    //}
+    //@include for-size(tablet-landscape) {
+    //    grid-template-columns: repeat(3, 1fr);
+    //    grid-template-areas:
+    //        'header header header'
+    //        'main main main'
+    //        'footer footer footer';
+    //}
+    //
+    //@include for-size(desktop) {
+    //    grid-template-columns: repeat(3, 1fr);
+    //    grid-template-areas:
+    //        'header header header'
+    //        'main main main'
+    //        'main main main'
+    //        'main main main'
+    //        'footer footer footer';
+    //}
+    //
+    //@include for-size(desktop-big) {
+    //    grid-template-columns: repeat(5, 1fr);
+    //    grid-template-areas:
+    //        'header header header'
+    //        'main main main'
+    //        'main main main'
+    //        'main main main'
+    //        'footer footer footer';
+    //}
 
     h1 {
         justify-self: center;
@@ -243,6 +282,9 @@
             grid-column: span 1;
         }
         @include for-size(tablet-portrait) {
+            grid-column: span 1;
+        }
+        @include for-size(tablet-landscape) {
             grid-column: span 2;
         }
     }
@@ -257,9 +299,6 @@
             grid-column: span 2;
         }
         @include for-size(tablet-landscape) {
-            grid-column: span 2;
-        }
-        @include for-size(desktop) {
             grid-column: span 3;
         }
     }
