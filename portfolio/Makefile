@@ -38,6 +38,7 @@ clean-all: clean
 
 install: install-php-tools
 	composer install
+	npm install
 
 install-php-tools:
 	install -d .bin
