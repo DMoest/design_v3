@@ -32,7 +32,11 @@
     <link rel="stylesheet" href="https://use.typekit.net/lxg6ryd.css">
 
     {# --- CSS Styles --- #}
-    <link rel="stylesheet" href="{{ theme_url }}/css/style.css" type="text/css">
+    {% if config.session.theme == "dark" %}
+        <link rel="stylesheet" href="{{ theme_url }}/css/style-dark.min.css" type="text/css" />
+    {% else %}
+        <link rel="stylesheet" href="{{ theme_url }}/css/style.min.css" type="text/css" />
+    {% endif %}
 </head>
 
 {# --- HEADER --- #}
