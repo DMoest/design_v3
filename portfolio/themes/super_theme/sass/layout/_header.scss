@@ -7,70 +7,65 @@
     grid-area: header;
 }
 
-.container__header {
-    align-content: stretch;
-    justify-content: space-between;
-    position: relative;
-    top: 0;
-    z-index: 2000;
-    flex-flow: row wrap;
-    display: flex;
-    margin: 0;
-    box-sizing: border-box;
-    width: 100%;
-    height: auto;
-    padding: divide(map-get($vertical-rhythm, small));
-    background-color: $color-primary-100;
-    grid-area: header;
-
-    //@include for-size(phone-only) {
-    //    padding: $pad-xs;
-    //}
-    //@include for-size(tablet-portrait) {
-    //    padding: $pad-s;
-    //}
-
-    .title_tagline { // stylelint-disable-line
-        margin: auto 0;
-
-        @include for-size(phone-only) {
-            flex-basis: 12rem;
-        }
-        @include for-size(tablet-portrait) {
-            flex-basis: fit-content;
-        }
-    }
-
-    .title {
-        flex-basis: fit-content;
+.container {
+    &__header {
+        align-content: stretch;
+        justify-content: space-between;
+        position: relative;
+        top: 0;
+        z-index: 2000;
+        flex-flow: row wrap;
+        display: flex;
         margin: 0;
-        padding: divide(map-get($vertical-rhythm, small)) divide(map-get($vertical-rhythm, small)) map-get($vertical-rhythm, small) 0;
-
-        &__hairline {
-            font-weight: 100;
-        }
-    }
-
-    //.tagline {}
-
-    .logo {
-        flex-basis: fit-content;
-        display: block;
-        overflow: hidden;
-        margin: auto 0;
-    }
-
-    .link {
+        box-sizing: border-box;
         width: 100%;
         height: auto;
-    }
+        padding: divide(map-get($vertical-rhythm, small));
+        background-color: $color-primary-100;
+        grid-area: header;
 
-    .img {
-        display: inline-block;
-        margin: auto 0;
-        border-radius: 2500rem;
+        .title_tagline { // stylelint-disable-line
+            margin: auto 0;
 
-        width: 5rem;
-        height: 5rem;
+            @include for-size(phone-only) {
+                flex-basis: 12rem;
+            }
+            @include for-size(tablet-portrait) {
+                flex-basis: fit-content;
+            }
+        }
+
+        .title {
+            flex-basis: fit-content;
+            margin: 0;
+            padding: divide(map-get($vertical-rhythm, small)) divide(map-get($vertical-rhythm, small)) map-get($vertical-rhythm, small) 0;
+
+            &__hairline {
+                font-weight: 100;
+            }
+        }
+
+        //.tagline {}
+
+        .logo {
+            flex-basis: fit-content;
+            display: block;
+            overflow: hidden;
+            margin: auto 0;
+        }
+
+        .link {
+            width: 100%;
+            height: auto;
+        }
+
+        .img {
+            display: inline-block;
+            margin: auto 0;
+            border-radius: 2500rem;
+
+            width: 5rem;
+            height: 5rem;
+        }
     }
 }

@@ -10,56 +10,79 @@
     width: 100%;
     height: auto;
 
-    // MEDIA QUERIES
-    @include for-size(phone-only) {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-areas:
+    &.index {
+        // MEDIA QUERIES
+        @include for-size(phone-only) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: auto;
+            grid-template-areas:
             'header'
             'main'
-            'footer'
-        ;
+            'footer';
+        }
+        @include for-size(tablet-portrait) {
+            grid-template-columns: 10% 1fr 1fr 10%;
+            grid-template-rows: auto;
+            grid-template-areas:
+            'header header header header'
+            '. main main .'
+            '. main main .'
+            '. main main .'
+            'footer footer footer footer';
+        }
+        @include for-size(tablet-landscape) {
+            grid-template-columns: 12.5% 1fr 1fr 12.5%;
+        }
+        @include for-size(desktop) {
+            grid-template-columns: 15% 1fr 1fr 15%;
+        }
     }
-    @include for-size(tablet-portrait) {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
+
+    &.tech {
+        // MEDIA QUERIES
+        @include for-size(phone-only) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-areas:
+            'header'
+            'main'
+            'footer';
+        }
+        @include for-size(tablet-portrait) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
             'header header header'
             'sidebar-left main main'
             'sidebar-left main main'
             'sidebar-left main main'
-            'footer footer footer'
-        ;
-    }
-    @include for-size(tablet-landscape) {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
+            'footer footer footer';
+        }
+        @include for-size(tablet-landscape) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
             'header header header'
             'sidebar-left main main'
             'sidebar-left main main'
             'sidebar-left main main'
-            'footer footer footer'
-        ;
-    }
-
-    @include for-size(desktop) {
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-areas:
+            'footer footer footer';
+        }
+        @include for-size(desktop) {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-areas:
             'header header header header header'
             'sidebar-left main main main sidebar-right'
             'sidebar-left main main main sidebar-right'
             'sidebar-left main main main sidebar-right'
-            'footer footer footer footer footer'
-        ;
-    }
-
-    @include for-size(desktop-big) {
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-areas:
+            'footer footer footer footer footer';
+        }
+        @include for-size(desktop-big) {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-areas:
             'header header header header header'
             'sidebar-left main main main sidebar-right'
             'sidebar-left main main main sidebar-right'
             'sidebar-left main main main sidebar-right'
-            'footer footer footer footer footer'
-        ;
+            'footer footer footer footer footer';
+        }
     }
 
     // MAIN CONTENT CONTAINER
@@ -68,26 +91,74 @@
         margin: 0;
         box-sizing: border-box;
         width: 100%;
-        height: 100%;
         background-color: $color-bg-light;
         grid-area: main;
 
         // MEDIA QUERIES
         @include for-size(phone-only) {
-            padding: 0 map-get($vertical-rhythm, small);
+            padding: 0 map-get($vertical-rhythm, small) multiply(map-get($vertical-rhythm, small)) map-get($vertical-rhythm, small);
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                padding: map-get($vertical-rhythm, small) 0;
+            }
+
+            p {
+                padding-bottom: map-get($vertical-rhythm, small);
+            }
         }
         @include for-size(tablet-portrait) {
-            padding: 0 map-get($vertical-rhythm, medium);
+            padding: 0 map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium)) 0;
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                padding: map-get($vertical-rhythm, medium) 0;
+            }
+
+            p {
+                padding-bottom: map-get($vertical-rhythm, medium);
+            }
         }
         @include for-size(tablet-landscape) {
-            padding: 0 multiply(map-get($vertical-rhythm, medium));
+            padding: 0 map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium)) 0;
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                padding: map-get($vertical-rhythm, medium) 0;
+            }
+
+            p {
+                padding-bottom: map-get($vertical-rhythm, medium);
+            }
         }
         @include for-size(desktop) {
-            padding: 0 multiply(map-get($vertical-rhythm, large), 4);
+            padding: 0 map-get($vertical-rhythm, large) multiply(map-get($vertical-rhythm, large)) 0;
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                padding: map-get($vertical-rhythm, large) 0;
+            }
+
+            p {
+                padding-bottom: map-get($vertical-rhythm, large);
+            }
         }
-        //@include for-size(desktop-big) {
-        //    padding: 0 multiply(map-get($vertical-rhythm, large), 16);
-        //}
     }
 
     // SIDEBAR CONTAINER
@@ -110,7 +181,7 @@
             padding: divide(map-get($vertical-rhythm, small));
             background-color: #4a154b;
             text-decoration: none;
-            color: white;
+            color: $color-text-base;
         }
 
         // SIDES - Left/Right
@@ -161,6 +232,7 @@
             flex-direction: row;
             display: flex;
         }
+
         &.flex-column {
             flex-direction: column;
             display: flex;
@@ -210,44 +282,9 @@
     @include for-size(phone-only) {
         grid-template-columns: repeat(1, 1fr);
         grid-template-areas:
-            'header'
-            'main'
-            'footer';
+        'header'
+        'main';
     }
-    //@include for-size(tablet-portrait) {
-    //    grid-template-columns: repeat(2, 1fr);
-    //    grid-template-areas:
-    //        'header'
-    //        'main'
-    //        'footer';
-    //}
-    //@include for-size(tablet-landscape) {
-    //    grid-template-columns: repeat(3, 1fr);
-    //    grid-template-areas:
-    //        'header header header'
-    //        'main main main'
-    //        'footer footer footer';
-    //}
-    //
-    //@include for-size(desktop) {
-    //    grid-template-columns: repeat(3, 1fr);
-    //    grid-template-areas:
-    //        'header header header'
-    //        'main main main'
-    //        'main main main'
-    //        'main main main'
-    //        'footer footer footer';
-    //}
-    //
-    //@include for-size(desktop-big) {
-    //    grid-template-columns: repeat(5, 1fr);
-    //    grid-template-areas:
-    //        'header header header'
-    //        'main main main'
-    //        'main main main'
-    //        'main main main'
-    //        'footer footer footer';
-    //}
 
     h1 {
         justify-self: center;
@@ -262,9 +299,6 @@
         @include for-size(tablet-landscape) {
             grid-column: span 3;
         }
-    }
-
-    p {
     }
 }
 

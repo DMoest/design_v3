@@ -9776,25 +9776,49 @@ dd {
   height: auto;
 }
 @media only screen and (max-width: 667px) {
-  .container {
+  .container.index {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "header" "main" "footer";
+  }
+}
+@media only screen and (min-width: 668px) {
+  .container.index {
+    grid-template-columns: 10% 1fr 1fr 10%;
+    grid-template-rows: auto;
+    grid-template-areas: "header header header header" ". main main ." ". main main ." ". main main ." "footer footer footer footer";
+  }
+}
+@media only screen and (min-width: 926px) {
+  .container.index {
+    grid-template-columns: 12.5% 1fr 1fr 12.5%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container.index {
+    grid-template-columns: 15% 1fr 1fr 15%;
+  }
+}
+@media only screen and (max-width: 667px) {
+  .container.tech {
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas: "header" "main" "footer";
   }
 }
 @media only screen and (min-width: 668px) {
-  .container {
+  .container.tech {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "header header header" "sidebar-left main main" "sidebar-left main main" "sidebar-left main main" "footer footer footer";
   }
 }
 @media only screen and (min-width: 926px) {
-  .container {
+  .container.tech {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "header header header" "sidebar-left main main" "sidebar-left main main" "sidebar-left main main" "footer footer footer";
   }
 }
 @media only screen and (min-width: 1200px) {
-  .container {
+  .container.tech {
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas: "header header header header header" "sidebar-left main main main sidebar-right" "sidebar-left main main main sidebar-right" "sidebar-left main main main sidebar-right" "footer footer footer footer footer";
   }
@@ -9804,28 +9828,71 @@ dd {
   margin: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
   background-color: #feffff;
   grid-area: main;
 }
 @media only screen and (max-width: 667px) {
   .container__main {
-    padding: 0 1.21rem;
+    padding: 0 1.21rem 2.42rem 1.21rem;
+  }
+  .container__main h1,
+  .container__main h2,
+  .container__main h3,
+  .container__main h4,
+  .container__main h5,
+  .container__main h6 {
+    padding: 1.21rem 0;
+  }
+  .container__main p {
+    padding-bottom: 1.21rem;
   }
 }
 @media only screen and (min-width: 668px) {
   .container__main {
-    padding: 0 1.5625rem;
+    padding: 0 1.5625rem 3.125rem 0;
+  }
+  .container__main h1,
+  .container__main h2,
+  .container__main h3,
+  .container__main h4,
+  .container__main h5,
+  .container__main h6 {
+    padding: 1.5625rem 0;
+  }
+  .container__main p {
+    padding-bottom: 1.5625rem;
   }
 }
 @media only screen and (min-width: 926px) {
   .container__main {
-    padding: 0 3.125rem;
+    padding: 0 1.5625rem 3.125rem 0;
+  }
+  .container__main h1,
+  .container__main h2,
+  .container__main h3,
+  .container__main h4,
+  .container__main h5,
+  .container__main h6 {
+    padding: 1.5625rem 0;
+  }
+  .container__main p {
+    padding-bottom: 1.5625rem;
   }
 }
 @media only screen and (min-width: 1200px) {
   .container__main {
-    padding: 0 6.65rem;
+    padding: 0 1.6625rem 3.325rem 0;
+  }
+  .container__main h1,
+  .container__main h2,
+  .container__main h3,
+  .container__main h4,
+  .container__main h5,
+  .container__main h6 {
+    padding: 1.6625rem 0;
+  }
+  .container__main p {
+    padding-bottom: 1.6625rem;
   }
 }
 .container__sidebar {
@@ -9846,7 +9913,7 @@ dd {
   padding: 0.605rem;
   background-color: #4a154b;
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 .container__sidebar.left {
   grid-area: sidebar-left;
@@ -9935,7 +10002,7 @@ dd {
 @media only screen and (max-width: 667px) {
   .landingpage {
     grid-template-columns: repeat(1, 1fr);
-    grid-template-areas: "header" "main" "footer";
+    grid-template-areas: "header" "main";
   }
 }
 .landingpage h1 {
@@ -9956,6 +10023,7 @@ dd {
     grid-column: span 3;
   }
 }
+
 .span-1 {
   grid-column: span 1;
 }

@@ -2,54 +2,35 @@
 @import '../utilities/mixins';
 @import '../utilities/functions';
 
-// FOOTER CONTAINER
-.container__footer {
-    //position: fixed;
-    bottom: 0;
-    display: block;
-    background-color: $color-bg-light;
-    grid-area: footer;
 
-    //@include for-size(phone-only) {
-    //    padding: map-get($vertical-rhythm, small);
-    //}
-    //@include for-size(tablet-portrait) {
-    //    padding: divide(map-get($vertical-rhythm, medium)) map-get($vertical-rhythm, medium);
-    //}
-    //@include for-size(tablet-landscape) {
-    //    padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium));
-    //}
-    //@include for-size(desktop) {
-    //    padding: map-get($vertical-rhythm, medium) multiply(map-get($vertical-rhythm, medium), 4);
-    //}
-    //@include for-size(desktop-big) {
-    //    padding: map-get($vertical-rhythm, large) multiply(map-get($vertical-rhythm, large), 16);
-    //}
+.container {
+    &__footer {
+        bottom: 0;
+        display: block;
+        background-color: $color-bg-light;
+        grid-area: footer;
 
-    // FOOTER CONTENT CONTAINER
-    &--content {
-        justify-content: space-between;
-        display: flex;
-    }
+        &--content {
+            justify-content: space-between;
+            display: flex;
+        }
 
-    // FOOTER TEXT CONTAINER
-    &--text {
-        display: inline-block;
-        margin: auto 0;
-        padding: map-get($vertical-rhythm, small);
-    }
+        &--text {
+            display: inline-block;
+            margin: auto 0;
+            padding: map-get($vertical-rhythm, small);
+        }
 
-    // FOOTER SOCIAL ICON CONTAINER
-    &--social {
-        //@include font-size(p);
-        align-self: center;
-        display: inline-block;
-        margin: auto 0;
-        padding: map-get($vertical-rhythm, small);
-        font-size: 1.5rem;
+        &--social {
+            align-self: center;
+            display: inline-block;
+            margin: auto 0;
+            padding: map-get($vertical-rhythm, small);
+            font-size: 1.5rem;
 
-        a {
-            color: $color-text-inverted;
+            a {
+                color: $color-text-inverted;
+            }
         }
     }
 }
