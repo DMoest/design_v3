@@ -1,7 +1,7 @@
 ---
 title: HTML
 description: This is the page about the HTML technology.
-icon: fas fa-code
+icon: fa fa-html5
 template: technologies
 ---
 
@@ -12,7 +12,3 @@ HyperText Markup Language (HTML) utgör tillsammans med HyperText Transfer Proto
 HTML beskriver innehåll och struktur för våra webbplatser och gör det möjligt att ladda andra dokument till exempel CSS eller JavaScript filer.
 
 HTML använder sig av element beskrivna av taggar. Nedan är ett exempel på ett textstycke med en länk i:
-
-```html
-<p>En länk till min <a href="minwebbplats.html">webbplats</a></p>
-```

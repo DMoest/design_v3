@@ -20,12 +20,8 @@ Technologies {.subheading}
     <a href="technologies/javascript">JavaScript</a>
 </div>
 
-<div class="tech-box span-1">
+<div class="tech-box span-2">
     <a href="technologies/php">PHP</a>
-</div>
-
-<div class="tech-box span-1">
-    <a href="technologies/sqlite">SQLite</a>
 </div>
 
 <div class="tech-box span-3">
@@ -33,5 +29,9 @@ Technologies {.subheading}
 </div>
 
 <div class="tech-box span-1">
+    <a href="technologies/sqlite">SQLite</a>
+</div>
+
+<div class="tech-box span-2">
     <a href="technologies/git">Git</a>
 </div>

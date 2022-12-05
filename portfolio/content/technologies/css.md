@@ -1,7 +1,7 @@
 ---
 title: CSS
 description: This is the page about the CSS technology.
-icon: fas fa-code
+icon: fa fa-css3
 template: technologies
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Git
 description: This is the page about the Git technology.
-icon: fas fa-code
+icon: fab fa-github
 template: technologies
 ---
 
